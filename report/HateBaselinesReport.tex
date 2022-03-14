@@ -1,0 +1,72 @@
+
+\documentclass[11pt,a4paper]{article}
+\usepackage{acl2021}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{lit.bib}
+\usepackage{times}
+\usepackage{latexsym}
+\renewcommand{\UrlFont}{\ttfamily\small}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+%\aclfinalcopy % Uncomment this line for the final submission
+%\def\aclpaperid{***} %  Enter the acl Paper ID here
+
+%\setlength\titlebox{5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+\newcommand\BibTeX{B\textsc{ib}\TeX}
+
+%\aclfinalcopy % Uncomment this line for the final submission
+%\def\aclpaperid{***} %  Enter the acl Paper ID here
+
+%\setlength\titlebox{5cm}
+% You can expand the titlebox if you need extra space
+% to show all the authors. Please do not make the titlebox
+% smaller than 5cm (the original size); we will check this
+% in the camera-ready version and ask you to change it back.
+
+\title{Changes in Baselines of Hatespeech Detection with pretraining and Transformers}
+\author{Matthias Westenfelder}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+In this project we aim to construct a new representative baseline for Deep Neural Nets on the HatefulTwitter dataset proposed by \textcite{auto_hatespeech}. For this we implement a Transformer-based Architecture on the data and try to push the baselines proposed by the authors of the HatefulTwitter dataset.
+Then we will aim to provide some evaluation of explainability and performance, also with respect to industry usecases.
+\end{abstract}
+ 
+\section{Introduction}
+In their paper \textcite{auto_hatespeech} propose a tweet dataset with 25.000 entries and use some basic methods to establish baselines, especially interesting is that BoW approaches seem to have major problems distinguishing between hatespeech and offensive language since the distributions are so similar.
+This might indicate that context sensitive methods are to be used. For example Transformers/BERT-models yield such a functionality.
+
+\section{Review of \textcite{Attention_is_all_you_need} and \textcite{BERT}}
+Basicly build a foundational understanding for attention and the original BERT model. (Also important for myself since I just played around with the models in practice but never really understood the paper)
+
+\section{Review of \textcite{auto_hatespeech} and \textcite{BERT_Transferlearning_Hate}}
+Compare approaches of the \textcite{auto_hatespeech} to \textcite{BERT_Transferlearning_Hate} especially evaluate the feature engineering and see if there are things to expanded on.
+
+\section{Dataexploration}
+Documenting the dataexploration to motivate a lot of the feature engineering.
+Also gathering results on the HatefulTwitter dataset, since there are paper reviewing Hatespeech Datasets, they usually already have some facts about this perticular dataset gathered.
+
+\section{Feature Engineering and Parameter Finetuning}
+This is only fillable after I have some working code and also did some more digging on different papers and what they used as features.
+
+\section{Explainability and the Complexity Trade off}
+Test the Explainability by evaluating both models against the baselines from \cite{HateXplain}
+
+\section{Conclusions}
+
+
+
+\printbibliography
+
+\end{document}
