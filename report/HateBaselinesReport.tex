@@ -1,8 +1,9 @@
-
 \documentclass[11pt,a4paper]{article}
+\usepackage{graphicx}
 \usepackage{acl2021}
-\usepackage[backend=biber]{biblatex}
-\addbibresource{lit.bib}
+\usepackage{natbib}
+\bibliographystyle{abbrvnat}
+%%\addbibresource{lit.bib}
 \usepackage{times}
 \usepackage{latexsym}
 \renewcommand{\UrlFont}{\ttfamily\small}
@@ -38,35 +39,116 @@
 
 \begin{document}
 \maketitle
+\tableofcontents
 \begin{abstract}
-In this project we aim to construct a new representative baseline for Deep Neural Nets on the HatefulTwitter dataset proposed by \textcite{auto_hatespeech}. For this we implement a Transformer-based Architecture on the data and try to push the baselines proposed by the authors of the HatefulTwitter dataset.
+In this project we aim to construct a new representative baseline for Deep Neural Nets on the HatefulTwitter dataset proposed by \cite{auto_hatespeech}.
+For this we implement a Transformer-based Architecture on the data and try to push the baselines proposed by the authors of the HatefulTwitter dataset.
 Then we will aim to provide some evaluation of explainability and performance, also with respect to industry usecases.
 \end{abstract}
  
+
 \section{Introduction}
-In their paper \textcite{auto_hatespeech} propose a tweet dataset with 25.000 entries and use some basic methods to establish baselines, especially interesting is that BoW approaches seem to have major problems distinguishing between hatespeech and offensive language since the distributions are so similar.
+In their paper \cite{auto_hatespeech} propose a tweet dataset with 25.000 entries and use some basic methods to establish baselines,
+especially interesting is that BoW approaches seem to have major problems distinguishing between hatespeech and offensive language since the distributions are so similar.
 This might indicate that context sensitive methods are to be used. For example Transformers/BERT-models yield such a functionality.
 
-\section{Review of \textcite{Attention_is_all_you_need} and \textcite{BERT}}
-Basicly build a foundational understanding for attention and the original BERT model. (Also important for myself since I just played around with the models in practice but never really understood the paper)
+\section{Review of \cite{auto_hatespeech}}
+In this section the central question: "What did Davidson et al. actually do?" and what are the results against which we will benchmark.
 
-\section{Review of \textcite{auto_hatespeech} and \textcite{BERT_Transferlearning_Hate}}
-Compare approaches of the \textcite{auto_hatespeech} to \textcite{BERT_Transferlearning_Hate} especially evaluate the feature engineering and see if there are things to expanded on.
+\subsection{the Model}
+The jist of it is the following:
+They use a dataset with about 25.000 tweets. 
+Then use Tidf-vectorizers on the tokens and on the POS-tags of the tweet to get a vectorized 
+version of the tweet on the syntactic and on the word-level.
+Then calculate a few more features based on reading-ease levels, counts of hashtags,mentions,urls and sentiment.
+All these get fed into a feature selecter via logistic regression with L1-regularization ( using the liblinear solver )
+for dimensionality reduction and then predictions are generated using logistic regression.
 
-\section{Dataexploration}
-Documenting the dataexploration to motivate a lot of the feature engineering.
-Also gathering results on the HatefulTwitter dataset, since there are paper reviewing Hatespeech Datasets, they usually already have some facts about this perticular dataset gathered.
+\subsection{the Results}
+\cite{auto_hatespeech} claims that their final model has an overall precision of 0.91, an overall recall of 0.9 and a f1-score of 0.9.
+They also claim a precision of 0.44 and recall of 0.61 (which implies a F1-score of about 0.525) on the hate class.
+These claims come with an asteriks, because these numbers do not represent the performance on a test set but rather using the entire
+data to train and evaluating, effectively on the trainingset. 
+It is impossible to really judge how much overfitting inflates the numbers here.
+What we were able to replicate is a model which achieves overall precision 0.85, recall of 0.74 and F1-score of 0.77 on a testtest of 10\% of the total data
+using weighted averages.
+And a precision of 0.26, recall of 0.68 and an F1-score of 0.38 on the hateclass in the testset.
+Since we aim to compare the embeddings only we reran the sourcecode of Davidson with just the vectorizers on the tweet and the pos-tags.
+This yielded a model with overall precision of 0.84, recall of 0.74, F1-score of 0.77
+and a precision of 0.25, a recall of 0.64 and a F1-score of 0.36 on the hateclass again evaluated on 10\% of the data as a test set.
+The confusion matricies can be seen in \ref{fig:feature_confusion} and \ref{fig:nofeature_confusion}.
+\begin{figure}%[!ht]
+  \includegraphics[width=\linewidth]{feat_confusion.jpg}
+  \caption{Confusion of Model with Features}
+  \label{fig:feature_confusion}
+\end{figure}
 
-\section{Feature Engineering and Parameter Finetuning}
-This is only fillable after I have some working code and also did some more digging on different papers and what they used as features.
-
-\section{Explainability and the Complexity Trade off}
-Test the Explainability by evaluating both models against the baselines from \cite{HateXplain}
-
-\section{Conclusions}
+\begin{figure}%[!ht]
+  \includegraphics[width=\linewidth]{nofeat_confusion.jpg}
+  \caption{Confusion of Model with no features}
+  \label{fig:nofeature_confusion}
+\end{figure}
 
 
+\section{The Model and Implementation}
+\subsection{The preprocessing}
+For preprocessing of the Tweets we used the Spacy \textbf{en\_core\_web\_sm} pipeline with \textbf{EntityRuler} Component added.
+Which uses identical RegEx to Davidson to identify urls mentions and excess whitespace.
+Then the entire tweet is lemmatized via the Lemmatizer in the \textbf{en\_core\_web\_sm} pipeline and urls 
+are replaced with a "[URL]" token, as well as mentions being replaced by a "[MENTION]" token.
+The entire procedure is handeled in the function \textbf{preprocess\_tweet} in the data\_pipeline notebook.
+Here some possible improvements would be to also have a dedicated "[HASHTAG]" token as well as dealing better with elongated
+versions or slightly modified versions of the same tokens. 
+For example: turning "Shuuuuuuuuut upppp" or "\$hut up" into "shut up".
+\subsection{The Model}
+For the model we used a \textbf{distil-bert-uncased} pretrained Distilbert model with a classification head for finetuning
+using the Huggingface \textbf{AutoModelForSequenceClassification} class. In addition we used the appropriate BERT-WordPiece 
+tokenizer adding two custom tokens ([URL],[MENTION]) to the tokenizer.
+The model gets called by the \textbf{Trainer} class via a \textbf{model\_init} method, since otherwise the classification head
+weights are not connected to the \textbf{seed} parameter of the \textbf{Trainer} class.
+This turns out to be a great problem to get reproducable results.
+Especially in our experiments, this turned out to be a problem, since the best model we trained was not able to be replicated,
+with the set seed since, we simply got lucky with the classification head weights. Which is exactly why we now use a \textbf{model\_init} method.
+And also why it shouldn't be expected to get the exact weights we got once the training procedure is followed.
+Which is why the Pytorch model is provided completely in the repository to make the results reproducable.
+\subsection{Finetuning}
+For training we used the following Hyperparameters:
+First we finetuned with: 
+\begin{itemize}
+    \item learning\_rate = 1e-5
+    \item per\_device\_train\_batch\_size = 16
+    \item per\_device\_test\_batch\_size = 16
+    \item num\_train\_epochs = 5
+    \item weight\_decay=0.01
+    \item evalution\_strategy = "steps"
+    \item eval\_steps = 500
+    \item fp16 = True
+    \item load\_best\_model\_at\_end = True
+    \item metric\_for\_best\_model = eval\_hatef1
+    \item seed = 42
+\end{itemize}
+Then we finetuned another pass with:
+\begin{itemize}
+    \item learning\_rate = 5e-6
+    \item per\_device\_train\_batch\_size = 16
+    \item per\_device\_test\_batch\_size = 16
+    \item num\_train\_epochs = 2
+    \item weight\_decay=0.01
+    \item evalution\_strategy = "steps"
+    \item eval\_steps = 500
+    \item fp16 = True
+    \item load\_best\_model\_at\_end = True
+    \item metric\_for\_best\_model = eval\_hatef1
+    \item seed = 42
+\end{itemize}
 
-\printbibliography
+\subsection{The Evaluation}
+
+\section{Results}
+
+
+%\printbibliography
+
+\bibliography{lit}
 
 \end{document}

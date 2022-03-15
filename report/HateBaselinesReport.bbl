@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Davidson et~al.(2017)Davidson, Warmsley, Macy, and
+  Weber]{auto_hatespeech}
+T.~Davidson, D.~Warmsley, M.~W. Macy, and I.~Weber.
+\newblock Automated hate speech detection and the problem of offensive
+  language.
+\newblock \emph{CoRR}, abs/1703.04009, 2017.
+\newblock URL \url{http://arxiv.org/abs/1703.04009}.
+
+\end{thebibliography}
