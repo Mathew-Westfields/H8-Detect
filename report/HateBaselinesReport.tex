@@ -96,7 +96,7 @@ For preprocessing of the Tweets we used the Spacy \textbf{en\_core\_web\_sm} pip
 Which uses identical RegEx to Davidson to identify urls mentions and excess whitespace.
 Then the entire tweet is lemmatized via the Lemmatizer in the \textbf{en\_core\_web\_sm} pipeline and urls 
 are replaced with a "[URL]" token, as well as mentions being replaced by a "[MENTION]" token.
-The entire procedure is handeled in the function \textbf{preprocess\_tweet} in the data\_pipeline notebook.
+The entire procedure is handeled in the function \textbf{preprocess\_tweet} in the \textit{data\_pipeline} notebook.
 Here some possible improvements would be to also have a dedicated "[HASHTAG]" token as well as dealing better with elongated
 versions or slightly modified versions of the same tokens. 
 For example: turning "Shuuuuuuuuut upppp" or "\$hut up" into "shut up".
@@ -112,6 +112,10 @@ with the set seed since, we simply got lucky with the classification head weight
 And also why it shouldn't be expected to get the exact weights we got once the training procedure is followed.
 Which is why the Pytorch model is provided completely in the repository to make the results reproducable.
 \subsection{Finetuning}
+We used a custom lossfunction to mediate classimbalances.
+For this we subclassed the \textbf{Trainer} class and overwrote the \textbf{compute\_loss} function with a custom function.
+We use CategoricalCrossEntropy with weights for each class given by:
+$$ w_i = 1 - \frac{count(class_i)}{count(data)}$$
 For training we used the following Hyperparameters:
 First we finetuned with: 
 \begin{itemize}
@@ -141,10 +145,11 @@ Then we finetuned another pass with:
     \item metric\_for\_best\_model = eval\_hatef1
     \item seed = 42
 \end{itemize}
-
-\subsection{The Evaluation}
+the rest of the unspecified hyperparameters were the default value or are paths/logging settings which aren't training
+relevant and can be looked up in the \textit{train\_model} notebook.
 
 \section{Results}
+The results.
 
 
 %\printbibliography
