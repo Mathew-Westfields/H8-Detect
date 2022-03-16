@@ -1,19 +1,19 @@
 # Fdb version 3
-["bibtex HateBaselinesReport"] 1647372241 "HateBaselinesReport.aux" "HateBaselinesReport.bbl" "HateBaselinesReport" 1647372908
-  "HateBaselinesReport.aux" 1647372907 1196 eddc6aef036a104cda744f630fb68edc "pdflatex"
+["bibtex HateBaselinesReport"] 1647372241 "HateBaselinesReport.aux" "HateBaselinesReport.bbl" "HateBaselinesReport" 1647464385
+  "HateBaselinesReport.aux" 1647464384 1196 eddc6aef036a104cda744f630fb68edc "pdflatex"
   "c:/texlive/2021/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1638109433 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
   "lit.bib" 1647368476 3533 e99c7030ba83368112f522a0aeb5d240 ""
   (generated)
   "HateBaselinesReport.bbl"
   "HateBaselinesReport.blg"
-["pdflatex"] 1647372906 "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" "HateBaselinesReport.pdf" "HateBaselinesReport" 1647372908
-  "HateBaselinesReport.aux" 1647372907 1196 eddc6aef036a104cda744f630fb68edc "pdflatex"
+["pdflatex"] 1647464382 "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" "HateBaselinesReport.pdf" "HateBaselinesReport" 1647464385
+  "HateBaselinesReport.aux" 1647464384 1196 eddc6aef036a104cda744f630fb68edc "pdflatex"
   "HateBaselinesReport.bbl" 1647372241 595 376f3a47b510f800c9938da12c78762f "bibtex HateBaselinesReport"
-  "HateBaselinesReport.out" 1647372907 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "HateBaselinesReport.tex" 1647372904 8381 5dc0fc7b23e8edcd03d691af53489b28 ""
-  "HateBaselinesReport.toc" 1647372907 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "HateBaselinesReport.out" 1647464383 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "HateBaselinesReport.tex" 1647464380 8594 7aa219eca08f1a6f59624af442226913 ""
+  "HateBaselinesReport.toc" 1647464383 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   "acl2021.sty" 1647266102 22068 aa9be2b461d78fecf8536e61fd97d914 ""
-  "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" 1647372904 8381 5dc0fc7b23e8edcd03d691af53489b28 ""
+  "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" 1647464380 8594 7aa219eca08f1a6f59624af442226913 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1638107084 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1638107634 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1638106708 960 379cc0019370a9e0208a0a3f949f847a ""

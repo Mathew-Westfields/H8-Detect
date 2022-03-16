@@ -131,25 +131,33 @@ First we finetuned with:
     \item metric\_for\_best\_model = eval\_hatef1
     \item seed = 42
 \end{itemize}
-Then we finetuned another pass with:
+Then we finetuned another pass with changes only in:
 \begin{itemize}
     \item learning\_rate = 5e-6
-    \item per\_device\_train\_batch\_size = 16
-    \item per\_device\_test\_batch\_size = 16
     \item num\_train\_epochs = 2
-    \item weight\_decay=0.01
-    \item evalution\_strategy = "steps"
-    \item eval\_steps = 500
-    \item fp16 = True
-    \item load\_best\_model\_at\_end = True
-    \item metric\_for\_best\_model = eval\_hatef1
     \item seed = 42
 \end{itemize}
 the rest of the unspecified hyperparameters were the default value or are paths/logging settings which aren't training
 relevant and can be looked up in the \textit{train\_model} notebook.
+\subsection{Results}
+This yielded 
+\begin{center}
+\begin{tabular}{c c c c c}
+class & precision & recall & f1-score & support \\
+hateful & 0.58 & 0.75 & 0.66 & 134.0 \\
+offensive & 0.97 & 0.96 & 0.96 & 1899.0 \\
+neither & 0.96 & 0.95 & 0.96 & 446.0 \\
+\end{tabular}
+\end{center}
 
-\section{Results}
-The results.
+\begin{center}
+\begin{tabular}{c c c c c}
+metric & precision & recall & f1-score & support \\
+accuracy & nan & nan & 0.94 & 2479.0 \\
+macroavg & 0.84 & 0.89 & 0.86 & 2479.0 \\
+weightedavg & 0.95 & 0.94 & 0.95 & 2479.0 \\
+\end{tabular}
+\end{center}
 
 
 %\printbibliography
