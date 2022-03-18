@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.28)  16 MAR 2022 21:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.28)  18 MAR 2022 02:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -228,7 +228,7 @@ Package microtype Info: Loading configuration file microtype.cfg.
  (c:/texlive/2021/texmf-dist/tex/latex/microtype/microtype.cfg
 File: microtype.cfg 2021/10/31 v3.0 microtype main configuration file (RS)
 ))
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 40.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 42.
  (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) (c:/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
@@ -238,24 +238,24 @@ File: l3backend-pdftex.def 2021-10-18 L3 backend support: PDF output (pdfTeX)
 ) (./HateBaselinesReport.aux)
 \openout1 = `HateBaselinesReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
  (c:/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count279
@@ -275,7 +275,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (c:/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 40.
+Package hyperref Info: Link coloring ON on input line 42.
  (c:/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (c:/texlive/2021/texmf-dist/tex/latex/refcount/refcount.sty
@@ -285,9 +285,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count285
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
  (./HateBaselinesReport.out) (./HateBaselinesReport.out)
 \@outlinefile=\write3
 \openout3 = `HateBaselinesReport.out'.
@@ -295,18 +295,18 @@ LaTeX Info: Redefining \nameref on input line 40.
  ABD: EveryShipout initializing macros
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 40.
-Package microtype Info: Applying patch `item' on input line 40.
-Package microtype Info: Applying patch `toc' on input line 40.
-Package microtype Info: Applying patch `eqnum' on input line 40.
-Package microtype Info: Applying patch `footnote' on input line 40.
+LaTeX Info: Redefining \microtypecontext on input line 42.
+Package microtype Info: Applying patch `item' on input line 42.
+Package microtype Info: Applying patch `toc' on input line 42.
+Package microtype Info: Applying patch `eqnum' on input line 42.
+Package microtype Info: Applying patch `footnote' on input line 42.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 40.
+LaTeX Info: Redefining \showhyphens on input line 42.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -316,12 +316,12 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 41.
+(Font)              <12> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 41.
+(Font)              <8> on input line 43.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 41.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 41.
+(Font)              <6> on input line 43.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 43.
  (c:/texlive/2021/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 ) (./HateBaselinesReport.toc)
@@ -329,40 +329,44 @@ File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 \openout4 = `HateBaselinesReport.toc'.
 
 
-Underfull \hbox (badness 1194) in paragraph at lines 59--66
+Underfull \hbox (badness 1194) in paragraph at lines 65--72
 \OT1/ptm/m/n/10.95 (+20) The jist of it is the fol-low-ing: They use a
  []
 
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <10.95> on input line 93.
 <feat_confusion.jpg, id=14, 361.35pt x 361.35pt>
 File: feat_confusion.jpg Graphic file (type jpg)
 <use feat_confusion.jpg>
-Package pdftex.def Info: feat_confusion.jpg  used on input line 81.
+Package pdftex.def Info: feat_confusion.jpg  used on input line 134.
 (pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
-<nofeat_confusion.jpg, id=15, 361.35pt x 361.35pt>
+[1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+
+]
+<nofeat_confusion.jpg, id=31, 361.35pt x 361.35pt>
 File: nofeat_confusion.jpg Graphic file (type jpg)
 <use nofeat_confusion.jpg>
-Package pdftex.def Info: nofeat_confusion.jpg  used on input line 87.
+Package pdftex.def Info: nofeat_confusion.jpg  used on input line 140.
 (pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 102.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 155.
 (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 103.
- [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-
-] [2 <./feat_confusion.jpg> <./nofeat_confusion.jpg>]
-Overfull \hbox (14.12978pt too wide) in paragraph at lines 145--151
- [] 
+) [2 <./feat_confusion.jpg> <./nofeat_confusion.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 217--226
+[][]
  []
 
-
-Overfull \hbox (29.83202pt too wide) in paragraph at lines 154--160
- [] 
- []
-
+<model_confusion.jpg, id=46, 361.35pt x 361.35pt>
+File: model_confusion.jpg Graphic file (type jpg)
+<use model_confusion.jpg>
+Package pdftex.def Info: model_confusion.jpg  used on input line 235.
+(pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
 (./HateBaselinesReport.bbl
 LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 14.
  (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -376,26 +380,24 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 14.
-) [3
-
-] (./HateBaselinesReport.aux)
+) [3 <./model_confusion.jpg>] (./HateBaselinesReport.aux)
 Package rerunfilecheck Info: File `HateBaselinesReport.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  )
 (\end occurred when \ifx on line 4 was incomplete) 
 Here is how much of TeX's memory you used:
- 12737 strings out of 478353
- 205277 string characters out of 5852100
- 556493 words of memory out of 5000000
- 30526 multiletter control sequences out of 15000+600000
- 429798 words of font info for 166 fonts, out of 8000000 for 9000
+ 12752 strings out of 478353
+ 205567 string characters out of 5852100
+ 561707 words of memory out of 5000000
+ 30531 multiletter control sequences out of 15000+600000
+ 427975 words of font info for 165 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,77p,1100b,419s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,10n,77p,1100b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on HateBaselinesReport.pdf (3 pages, 134749 bytes).
+Output written on HateBaselinesReport.pdf (3 pages, 147214 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 38923 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
+ 34832 words of extra memory for PDF output out of 35830 (max. 10000000)
 
