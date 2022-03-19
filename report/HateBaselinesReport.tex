@@ -1,5 +1,6 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage{graphicx}
+\usepackage{dirtytalk}
 \usepackage{acl2021}
 \usepackage{natbib}
 \bibliographystyle{abbrvnat}
@@ -100,6 +101,7 @@ accuracy & nan & nan & 0.75 & 2480.0 \\
 macro & 0.59 & 0.72 & 0.61 & 2480.0 \\
 weighted & 0.84 & 0.75 & 0.78 & 2480.0 \\
 \end{tabular}}
+\label{tab:davidson_withfeat}
 \end{table}
 
 Since we aim to compare the embeddings only we reran the sourcecode of Davidson with just the vectorizers on the tweet and the pos-tags.
@@ -126,18 +128,19 @@ accuracy & nan & nan & 0.74 & 2480.0 \\
 macro & 0.59 & 0.72 & 0.61 & 2480.0 \\
 weighted & 0.85 & 0.74 & 0.78 & 2480.0 \\
 \end{tabular}}
+\label{tab:davidson_nofeat}
 \end{table}
 
 The confusion matricies can be seen in \ref{fig:feature_confusion} and \ref{fig:nofeature_confusion}.
 
 \begin{figure}[h]
-  \includegraphics[width=\linewidth]{feat_confusion.jpg}
+  \includegraphics[width=\linewidth]{./tables-figures/feat_confusion.jpg}
   \caption{Confusion of our version of Davidsons model with features}
   \label{fig:feature_confusion}
 \end{figure}
 
 \begin{figure}[h]
-  \includegraphics[width=\linewidth]{nofeat_confusion.jpg}
+  \includegraphics[width=\linewidth]{./tables-figures/nofeat_confusion.jpg}
   \caption{Confusion of our version of Davidsons model with no features}
   \label{fig:nofeature_confusion}
 \end{figure}
@@ -232,20 +235,157 @@ This still is a 0.06 improvement in precision over Davidsons reported numbers (w
 Here one sees a form of Precision/Recall Trade-off.
 
 \begin{figure}[h]
- \includegraphics[width=\linewidth]{model_confusion.jpg}
+ \includegraphics[width=\linewidth]{./tables-figures/model_confusion.jpg}
   \caption{Confusion of the finetuned model}
   \label{fig:model_confusion}
 \end{figure}
 
 \section{Evaluation}
-\subsection{Comparison between \cite{auto_hatespeech} and our model}
-\subsection{What did the model learn}
+\subsection{Comparison to \cite{auto_hatespeech}}
+Comparing \ref{tab:model} to the reported numbers in Davidsons paper we can clearly see the overall performance increase
+\begin{table}[h]
+  \begin{tabular}{c | c  c}
+    metric & our model & Davidson \\
+    \hline
+    precision-avg &  0.95 & 0.91 \\
+    recall-avg &  0.94 & 0.90 \\  
+    f1-score-avg &  0.95 & 0.9 \\
+  \end{tabular}
+\end{table}
+
+Especially interesting is the improvement on the hate-class of the transformer model, especially with tuned Hyperparameters and
+finding good initial weights in the classification head the finetuned transformer model outperforms the Baseline by Davidson reliably.
+
+\begin{table}[h]
+  \begin{tabular}{c | c  c}
+    metric & our model & Davidson \\
+    \hline
+    hate-precision &  0.58 & 0.44 \\
+    hate-recall &  0.75 & 0.61 \\  
+    hate-f1-score &  0.66 & 0.53 \\
+  \end{tabular}
+\end{table}
+
+\subsection{Confusion and Maximum loss}
+We first begin to investigate some confusions of the model, for this purpose we use the \textbf{get\_top\_loss} function and investigate the examples which
+caused the biggest contributions to the loss.
+A typical error of the model is to overfit on the frequency of slurrs like "bitch","hoe" and similar.
+These get classified almost universally as offensive independend of the context they were used.
+A few examples of a tweets which were classified as offensive but are actually part of the neither class would be
+
+\paragraph{Examples of confusing neither with offensive class:}
+\begin{center}
+  \say{I don't know what you been told but I love them project hoes} \newline
+  \say{No girls no hoes just me myself and I} \newline
+  \say{Up early then a bitch driving to denton omg can I move already} \newline
+  \say{Frustration can be a bitch !}\newline
+\end{center}
+
+Especially interesting is this example which illustrates the overfitting quite well:
+
+\begin{center}
+ \say{School Schoo Scho Sch Sc S St Sta Stay Stay h Stay ho Stay hom Stay home}
+\end{center}
+
+in this tweet the subword "ho" is so close to "hoe" that the model immediately thinks the tweet is offensive.
+This can be seen in the attention patterns of the model as seen in \ref{fig:school-saliency}
+
+The same overfitting on some special token frequency also leads to confusion between the hateful and offensive class.
+While confusion between the neither and hateful class occurs often in two types.
+The first type of error the model makes is not recognizing directed offensiveness versus undirected offensiveness.
+While the second type of error the model makes, is not seeing masked offensiveness.
+Where user use slurrs that don't have a high enough frequency tobe recognized as such 
+or where everyday objects get used creatively to create offensive context.
+
+\paragraph{Examples of confusions in the hateful-class}
+The tweets below were classified as belonging to the neither-class but belong to the hateful-class.
+
+\begin{center}
+ \say{Twice divorced teabagger Florida Attorney General says marriage is reserved for 'stable, enduring family units' http://t.co/9ZWr3O33iu \#wtf} \newline
+ \say{@Flow935 jus wanted to let y\&\#225;ll know hope the hurricane kills your soca sunday trash \#LORDWILLIN} \newline
+\end{center}
+
+Both don't feature obvious offensive words and really become hateful by directing offensiveness towards someone personally, 
+these are good examples of the first type of error.
+While these Tweets, which also belong to the hateful-class and were classified as part of the neither-class, showcase the second type of error.
+\begin{center}
+  \say{stuffed her like an Oreo http://t.co/mPAjkWJbZp}\newline
+  \say{Porch monkey 4 Life} \newline
+  \say{You are a jiggaboo...!} \newline
+\end{center}
+
+The first type of error also tends to mix with the overfitting on sexists-slurrs as seen in the following tweets which were classified as offensive
+but which belong to the hateful-class since they direct their offensiveness towards someone.
+\begin{center}
+  \say{ @Fit4LifeMike @chanelisabeth hoe don't make me put up screenshots of your texts to me hoe }\newline
+  \say{@GlitteredInPink hoe don't tweet me}\newline
+  \say{RT @Slanguage: Stop flattering yourself, bitch. The only fan you have is on your ceiling.}\newline
+\end{center}
+
+Every one of these is a use of "hoe" or "bitch" directed at someone.
+These types of errors make up a big portion of the 100 examples with the highest loss in the entire dataset.
+
+\subsection{What did the model learn?}
+The investigation of errors yields also some evidence of the model actually learning, instead of only fitting some
+frequency correlations. 
+This evidence is seen in some of the maximum loss examples, which are just plain misslabled, but get labled correctly by the model.
+
+\paragraph{Examples of tweets that belong in the neither-class:}
+\begin{center}
+\say{Bae made me deep fried Oreos \&\#128523;}\newline
+\say{@VinceSchilling Vince, what is the general feeling of the natives that you know in regards to the term "redskins"? Offensive to them or not?}\newline
+\say{wishing I could high five whoever named a species of birds "great tits"}\newline
+\say{RT @BALTsneakerShow: Water is wet. RT @202SOLE: Nike DC is trash.}\newline
+\say{Chocolate cake is so trash.}\newline
+\end{center}
+
+\paragraph{Examples of tweets that belong in the offensive-class:}
+\begin{center}
+\say{You wanna find hoes on here? Just follow the chicks who reply with heart eyes under sex gifs}\newline
+\say{@vh1ADENECA @260chocolate @4Sunshinejones1 aye, I respect ya hustle and all but dont tweet me anymore trash ass videos...thank u kindly}\newline
+\end{center}
+
+\paragraph{Examples of tweets that belong in the hateful-class:}
+\begin{center}
+\say{Looks like a tool but is useful as a clay hammer \#fag @hOPPondis http://t.co/K7wqlAWRwM}\newline
+\end{center}
+
+This is not yet complete evidence, but already provides some confidence that the model actually learned some reasonable structure from the ground up.
+The model definitely learned about rasist remarks a few of the highest confidence examples in the hate-class revolve around homophobic or racist language.
+As one can see in the saliencey scores using the \textbf{multiclass\_explainer} in the \textbf{evaluate\_model} notebook.
+ example outputs with high confidence are shown in \ref{fig:racism-example},
+  as one can see in these examples the model derives almost all confidence out of racist-slurrs.
+
+
+
+
+
+
+
+
+
 \subsection{Cost of Implementation and viability for industry purposes}
-\subsection{Conclusions}
+
+\section{Conclusion - A Reasonable Baseline for Hatespeech}
 
 
-%\printbibliography
 
+\clearpage 
+\appendix
+
+\section{Figures}
+\begin{figure}[!ht]
+  \includegraphics[width=2\linewidth]{./tables-figures/school-confusion-viz.JPG} 
+  \caption{saliencey scores for the "school stay home" example}
+  \label{fig:school-saliency}
+\end{figure}
+
+\begin{figure}[!ht]
+  \includegraphics[width=2\linewidth]{./tables-figures/white-trash-example.JPG} 
+  \includegraphics[width=2\linewidth]{./tables-figures/racism-example.JPG} 
+  \caption{The model gets strong signal from racist remarks}
+  \label{fig:racism-example}
+\end{figure}
 \bibliography{lit}
 
 \end{document}
