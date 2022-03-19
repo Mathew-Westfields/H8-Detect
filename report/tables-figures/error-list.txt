@@ -1,0 +1,196 @@
+bitch-type-error:
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 6.719225883483887  INDEX: 9555
+Up early then a bitch driving to denton omg can I move already
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 7.05551815032959  INDEX: 1697
+Frustration can be a bitch !
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.752060413360596  INDEX: 8807
+RT @Juicy_Squeaky: Any bitch who need a crowd to fight is clearly easily influenced &amp; weak minded &amp; most likely will commit suicide &#128514;&#128514;
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.646735668182373  INDEX: 17227
+Sometimes, even I gotta tell these hoes to grow up smh
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.624227046966553  INDEX: 8200
+RT @BARRYCLERJUSTE: Whatchu sayin hoe, YOU KNOW IM THE MAN HOE
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.564441204071045  INDEX: 23014
+No girls no hoes just me myself and I
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.508944034576416  INDEX: 1187
+You&#8217;re a little bitch RT @FuckingCashBro: RT @Thotcho: my team got blown out in the Super Bowl
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.478130340576172  INDEX: 5505
+@TheShoeBible @Steamed_Greens Them hoes are clean!
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.453566074371338  INDEX: 4469
+@JustDoItSlow &#128530;FOREVER 21 hoes
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.4257049560546875  INDEX: 6248
+RT @Fit4LifeMike: @Whitecholo23 @chanelisabeth true i need to sleep to make them Gainz bruh!! So all the hoes stay Mirin ;p 
+Alright, later&#8230;
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.422245979309082  INDEX: 13976
+So many bitches in one sentence #fixitjesus
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.360918998718262  INDEX: 23448
+RT @Chvntre: sometimes I wanna upper cut this bitch but I don't know if she's special ed or not
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.305154323577881  INDEX: 4301
+School
+Schoo
+Scho
+Sch
+Sc
+S
+St
+Sta
+Stay
+Stay h
+Stay ho
+Stay hom
+Stay home
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.235334396362305  INDEX: 3814
+RT @Jakelewis44_: We don't luv deez hoes&#128527; http://t.co/oFjlxAO5SF
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 6.738621234893799  INDEX: 2296
+@CallNeeshCakey we in this bitch finna get crunk eyebrows on double PAPP &#128165;&#128165;
+
+
+
+
+
+
+
+
+
+bad-annotation:
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 6.353243350982666  INDEX: 10854
+Bae made me deep fried Oreos &#128523;
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 6.130079746246338  INDEX: 24501
+You wanna find hoes on here? Just follow the chicks who reply with heart eyes under sex gifs
+
+TWEET: PRED_LABEL: neither LABEL: hateful LOSS: 6.031912326812744  INDEX: 6235
+RT @BALTsneakerShow: Water is wet. RT @202SOLE: Nike DC is trash.
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.9340949058532715  INDEX: 2903
+@vh1ADENECA @260chocolate @4Sunshinejones1 aye, I respect ya hustle and all but dont tweet me anymore trash ass videos...thank u kindly
+
+TWEET: PRED_LABEL: hateful LABEL: neither LOSS: 5.884278774261475  INDEX: 5291
+Looks like a tool but is useful as a clay hammer #fag @hOPPondis http://t.co/K7wqlAWRwM
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 5.6826701164245605  INDEX: 1233
+@VinceSchilling Vince, what is the general feeling of the natives that you know in regards to the term "redskins"? Offensive to them or not?
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 5.645569801330566  INDEX: 23702
+wishing I could high five whoever named a species of birds "great tits"
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 5.540576457977295  INDEX: 8868
+Chocolate cake is so trash.
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 5.458978652954102  INDEX: 40
+RT @Shawnzie3: Foxtrot
+Uniform
+Charlie
+Kilo.
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 5.069047451019287  INDEX: 3913
+Charlie not fukin around in Austin.. Every week somebody getting kicked off the team.
+
+TWEET: PRED_LABEL: neither LABEL: hateful LOSS: 5.2887067794799805  INDEX: 2595
+I really get upset when my lightskin friends have another cute dark skin sidekick..like Im supposed to be the only cute darkie u hang wit &#128545;
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 6.925930023193359  INDEX: 19339
+@That1guyJeff thank you. I hate you. Eat poison. Fall down. Run face first into a wall. Yankees missed the playoffs.
+
+TWEET: PRED_LABEL: hateful LABEL: neither LOSS: 5.675205230712891  INDEX: 23946
+Welcome to our land of dispossession! http://t.co/v14jkTLZ Check out the evil, racist whitey sitting on steps etc. "Reconquista, Woo Hoo!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+too Creative/ Out of Vocab / Everyday objects:
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 5.506646633148193  INDEX: 521
+stuffed her like an Oreo http://t.co/mPAjkWJbZp
+
+TWEET: PRED_LABEL: neither LABEL: hateful LOSS: 6.34062385559082  INDEX: 4632
+You are a jiggaboo...!
+
+TWEET: PRED_LABEL: neither LABEL: hateful LOSS: 5.197490215301514  INDEX: 2345
+Porch monkey 4 Life
+
+TWEET: PRED_LABEL: neither LABEL: offensive LOSS: 6.524477005004883  INDEX: 19035
+RT @LethalBizzle: Suck yo momma flappy bird!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+not realizing difference between personalized and unpersonalized attacks:
+
+TWEET: PRED_LABEL: offensive LABEL: neither LOSS: 5.927407264709473  INDEX: 9283
+Im a twat
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.508944034576416  INDEX: 1187
+You&#8217;re a little bitch RT @FuckingCashBro: RT @Thotcho: my team got blown out in the Super Bowl
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.47327995300293  INDEX: 18442
+&#8220;@FreddieGibbs: Tea bag a bitch.&#8221; Pahahaha
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.431632041931152  INDEX: 3482
+@Fit4LifeMike @chanelisabeth hoe don't make me put up screenshots of your texts to me hoe
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.38596248626709  INDEX: 13112
+RT @jasminee_gamboa: hoes will be hoes .
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.3108930587768555  INDEX: 8430
+@GlitteredInPink hoe don't tweet me
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.285584926605225  INDEX: 3294
+@TheErniie You're a little bitch.
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.265588760375977  INDEX: 15462
+RT @DRNRDX: @BrandonFxrd you're not safe pussy boy looooool http://t.co/TocJ1WxRYK
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.217508792877197  INDEX: 5932
+RT @Slanguage: Stop flattering yourself, bitch. The only fan you have is on your ceiling.
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.131502151489258  INDEX: 5701
+@MyNameShouldBe only one problem theres a "no pussies allowed" sorry @kerrythekilla...
+
+TWEET: PRED_LABEL: offensive LABEL: hateful LOSS: 5.049708843231201  INDEX: 11308
+@kieffer_jason oh but I am and my grades say other wise so u can stfu and get off my Twitter or u can box simple ass that pussy boy
+
+
+
+
+
+
+

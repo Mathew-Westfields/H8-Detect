@@ -1,9 +1,0 @@
-\begin{center}
-\begin{tabular}{c| c c c c}
-metric & precision & recall & f1-score & support \\
-\hline
-accuracy & nan & nan & 0.94 & 2479.0 \\
-macroavg & 0.84 & 0.89 & 0.86 & 2479.0 \\
-weightedavg & 0.95 & 0.94 & 0.95 & 2479.0 \\
-\end{tabular}
-\end{center}

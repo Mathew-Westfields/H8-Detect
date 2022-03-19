@@ -1,9 +1,0 @@
-\begin{center}
-\begin{tabular}{c| c c c c}
-class & precision & recall & f1-score & support \\
-\hline
-hateful & 0.21 & 0.6 & 0.31 & 134.0 \\
-offensive & 0.94 & 0.74 & 0.83 & 1900.0 \\
-neither & 0.61 & 0.81 & 0.69 & 446.0 \\
-\end{tabular}
-\end{center}
