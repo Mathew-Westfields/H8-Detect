@@ -42,48 +42,51 @@
 
 \begin{document}
 \maketitle
-\tableofcontents
 \begin{abstract}
-In this project we aim to construct a new representative baseline for Deep Neural Nets on the HatefulTwitter dataset proposed by \cite{auto_hatespeech}.
-For this we implement a Transformer-based Architecture on the data and try to push the baselines proposed by the authors of the HatefulTwitter dataset.
-Then we will aim to provide some evaluation of explainability and performance, also with respect to industry usecases.
+  Since the foundational paper \cite{Attention_is_all_you_need}, attentive systems, especially transformer models have 
+  taken the world of natural language processing by storm, especially the ability to inject context into embeddings and
+  finetune them based on a wide array of tasks, have yielded very strong and rigid results on natural language tasks.
+  Now the question is if baselines like in \cite{auto_hatespeech} are still valid or if the out-of-the-box performance of transformers
+  validates a readjustment of baselines.
+  We finetune a Distilbert model on the dataset of Davidson et. al, analyse the performance of the embeddings
+  and finally propose a new baseline on the dataset.
 \end{abstract}
  
 
 \section{Introduction}
-In their paper \cite{auto_hatespeech} propose a tweet dataset with 25.000 entries and use some basic methods to establish baselines,
-especially interesting is that BoW approaches seem to have major problems distinguishing between hatespeech and offensive language since the distributions are so similar.
-This might indicate that context sensitive methods are to be used. For example Transformers/BERT-models yield such a functionality.
+In their paper \cite{auto_hatespeech} propose a tweet dataset of about 25.000 handannotated tweets and use some basic methods to establish baselines.
+Especially interesting is that BoW approaches seem to have major problems distinguishing between hatespeech and offensive language since the distributions are so similar.
+This might indicate that context sensitive methods should be used. 
+For example Transformers/BERT-models yield such a functionality, so our focus will lie on those methods.
+
+\paragraph{The Research Question:} We aim to provide sufficient evidence that with transformer-models we need to adjust the baselines proposed by Davidson et. al up,
+to accommodate their stronger out of the box performance.
+
 As a convention we will use \textbf{bold font} to refer to codebase related entities, for example: 
-"...in the notebook \textbf{data\_pipeline} one finds the function \textbf{preprocess\_tweet} which handels preprocessing".
+"...in the notebook \textbf{data\_pipeline} one finds the function \textbf{preprocess\_tweet} which handles preprocessing".
 
-\subsection{The Research Question}
+Now to remind the reader of the central points of Davidson's paper we will review a few aspects of it here
 
-\section{Review of \cite{auto_hatespeech}}
-In this section the central question is: "What did Davidson et al. actually do?" and "What are the results against which we will benchmark?".
-
-\subsection{the Model}
-The jist oft is the following:
-They use a dataset with about 25.000 tweets. 
-Then use Tidf-vectorizers on the tokens and on the POS-tags of the tweet to get a vectorized 
+\subsection{The Model:}
+They use Tidf-vectorizers on the tokens and on the POS-tags of the tweet to get a vectorized 
 version of the tweet on the syntactic and on the word-level.
 Then calculate a few more features based on reading-ease levels, counts of hashtags,mentions,urls and sentiment.
 All these get fed into a feature selecter via logistic regression with L1-regularization ( using the liblinear solver )
 for dimensionality reduction and then predictions are generated using a \textbf{LinearSVC} with L2-penalty and squared hinge loss.
 
-\subsection{the Results}
-\cite{auto_hatespeech} claims that their final model has an overall precision of 0.91, an overall recall of 0.9 and a f1-score of 0.9.
+\subsection{The Results:}
+Davidson et. al claim that their final model has an overall precision of 0.91, an overall recall of 0.9 and a f1-score of 0.9.
 They also claim a precision of 0.44 and recall of 0.61 (which implies a F1-score of about 0.525) on the hate class.
-These claims come with an asteriks, because these numbers do not represent the performance on a test set but rather using the entire
+These claims come with an asterisk, because these numbers do not represent the performance on a test set but rather using the entire
 data to train and evaluating effectively on the trainingset. 
-It is impossible to really judge how much overfitting inflates the numbers here, but to keep everything compareable we will use this methodology as well.
+It is impossible to really judge how much overfitting inflates the numbers here, but to keep everything comparable we will use this methodology as well.
 What we were able to replicate is a model which achieves overall precision 0.87, recall of 0.85 and F1-score of 0.85 
 trained and evaluated on the entire dataset.
-And a precision of 0.48, recall of 0.47 and an F1-score of 0.44 on the hateclass.
+And a precision of 0.48, recall of 0.47 and an F1-score of 0.44 on the hate-class.
 Which is close to the reported values but still quite a bit less than what was reported.
 
 \begin{table}
-\caption{classification report for our reporduction of Davidsons model with features}
+\caption{classification report for our reproduction of Davidson's model with features}
 \resizebox{\linewidth}{!}{
 \begin{tabular}{c| c c c c}
 class & precision & recall & f1-score & support \\
@@ -110,7 +113,7 @@ This yielded a model with overall precision of 0.87, recall of 0.85, F1-score of
 and a precision of 0.4, a recall of 0.53 and a F1-score of 0.46 on the hateclass.
 
 \begin{table}
-\caption{classification report for our reporduction of Davidsons model without features} 
+\caption{classification report for our reproduction of Davidson's model without features} 
 \resizebox{\linewidth}{!}{
 \begin{tabular}{c| c c c c}
 class & precision & recall & f1-score & support \\
@@ -124,8 +127,8 @@ neither & 0.69 & 0.84 & 0.76 & 4163.0 \\
 metric & precision & recall & f1-score & support \\
 \hline
 accuracy & nan & nan & 0.85 & 24783.0 \\
-macroavg & 0.68 & 0.75 & 0.71 & 24783.0 \\
-weightedavg & 0.87 & 0.85 & 0.86 & 24783.0 \\
+macro  & 0.68 & 0.75 & 0.71 & 24783.0 \\
+weighted & 0.87 & 0.85 & 0.86 & 24783.0 \\
 \end{tabular}}
 
 
@@ -146,7 +149,8 @@ The confusion matricies can be seen in \ref{fig:feature_confusion} and \ref{fig:
   \label{fig:nofeature_confusion}
 \end{figure}
 
-\section{The Model and Implementation}
+
+\section{The Transformer Model and Implementation}
 
 \subsection{The preprocessing}
 For preprocessing of the Tweets we used the Spacy \textbf{en\_core\_web\_sm} pipeline with \textbf{EntityRuler} Component added.
@@ -295,7 +299,7 @@ The same overfitting on some special token frequency also leads to confusion bet
 While confusion between the neither and hateful class occurs often in two types.
 The first type of error the model makes is not recognizing directed offensiveness versus undirected offensiveness.
 While the second type of error the model makes, is not seeing masked offensiveness.
-Where user use slurrs that don't have a high enough frequency tobe recognized as such 
+Where user use slurrs that don't have a high enough frequency to be recognized as such 
 or where everyday objects get used creatively to create offensive context.
 
 \paragraph{Examples of confusions in the hateful-class}
@@ -357,21 +361,19 @@ As one can see in the saliencey scores using the \textbf{multiclass\_explainer} 
 example outputs with high confidence are shown in \ref{fig:racism-example},
 as one can see in these examples the model derives almost all confidence out of racist-slurrs.
 
-
-
 \subsection{Cost of Implementation and viability for industry purposes}
 
 \section{Conclusion - A Reasonable Baseline for Hatespeech}
 So we are now able to confidently answer our research question.
 Yes we should put forward a different Baseline performance for Transformer models on this dataset.
-We propose a good conservative baseline be a recall of 0.65 and precision of 0.55 on the hate-class
-with just embeddings, without external features and at least an F1-Score of 0.93 overall.
+We propose a good baseline to be a recall of 0.65 and precision of 0.55 on the hate-class without external features
+ and at least an F1-Score of 0.93 overall.
 This is a reasonable perfomance to expect of a Transformer model with a Sequential-head with finetuning
 and hyperparameter tuning.
-We didn't implement a real Hyperparameter optimization and on a faster GPU, it is possible to get a much deeper search into
+We didn't implement a real hyperparameter optimization and on a faster GPU, it is possible to get a much deeper search into
 the parameter space. Thus this seems like an appropriate baseline, especially wih the results of davidson, being only partially reproducable.
-
-
+A good goal to strive towards would be a recall of 0.75 and a precision of 0.6, but it is unclear if the training process for such a model, would 
+be simple enough to really call it a baseline anymore.
 
 
 \clearpage 

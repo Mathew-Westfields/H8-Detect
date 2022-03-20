@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{2}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -12,5 +12,13 @@ T.~Davidson, D.~Warmsley, M.~W. Macy, and I.~Weber.
   language.
 \newblock \emph{CoRR}, abs/1703.04009, 2017.
 \newblock URL \url{http://arxiv.org/abs/1703.04009}.
+
+\bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
+  Kaiser, and Polosukhin]{Attention_is_all_you_need}
+A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
+  L.~Kaiser, and I.~Polosukhin.
+\newblock Attention is all you need.
+\newblock \emph{CoRR}, abs/1706.03762, 2017.
+\newblock URL \url{http://arxiv.org/abs/1706.03762}.
 
 \end{thebibliography}

@@ -607,10 +607,6 @@ INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/latex-fonts/lasy8.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/latex-fonts/lasy6.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
-INPUT ./HateBaselinesReport.toc
-INPUT HateBaselinesReport.toc
-INPUT HateBaselinesReport.toc
-OUTPUT HateBaselinesReport.toc
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm

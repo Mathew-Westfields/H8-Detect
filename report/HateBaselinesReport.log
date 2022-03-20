@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.28)  20 MAR 2022 02:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.28)  20 MAR 2022 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -330,71 +330,69 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 44.
  (c:/texlive/2021/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
-) (./HateBaselinesReport.toc)
-\tf@toc=\write4
-\openout4 = `HateBaselinesReport.toc'.
-
+)
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <10.95> on input line 94.
+(Font)              <10.95> on input line 97.
  [1{c:/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-<./tables-figures/feat_confusion.jpg, id=31, 361.35pt x 361.35pt>
+<./tables-figures/feat_confusion.jpg, id=26, 361.35pt x 361.35pt>
 File: ./tables-figures/feat_confusion.jpg Graphic file (type jpg)
 <use ./tables-figures/feat_confusion.jpg>
-Package pdftex.def Info: ./tables-figures/feat_confusion.jpg  used on input line 138.
+Package pdftex.def Info: ./tables-figures/feat_confusion.jpg  used on input line 141.
 (pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
-<./tables-figures/nofeat_confusion.jpg, id=32, 361.35pt x 361.35pt>
+<./tables-figures/nofeat_confusion.jpg, id=27, 361.35pt x 361.35pt>
 File: ./tables-figures/nofeat_confusion.jpg Graphic file (type jpg)
 <use ./tables-figures/nofeat_confusion.jpg>
-Package pdftex.def Info: ./tables-figures/nofeat_confusion.jpg  used on input line 144.
+Package pdftex.def Info: ./tables-figures/nofeat_confusion.jpg  used on input line 147.
 (pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 159.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 163.
 (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./tables-figures/feat_confusion.jpg> <./tables-figures/nofeat_confusion.jpg>]
-<./tables-figures/model_confusion.jpg, id=46, 361.35pt x 361.35pt>
+) [2 <./tables-figures/feat_confusion.jpg> <./tables-figures/nofeat_confusion.jpg>]
+<./tables-figures/model_confusion.jpg, id=42, 361.35pt x 361.35pt>
 File: ./tables-figures/model_confusion.jpg Graphic file (type jpg)
 <use ./tables-figures/model_confusion.jpg>
-Package pdftex.def Info: ./tables-figures/model_confusion.jpg  used on input line 239.
+Package pdftex.def Info: ./tables-figures/model_confusion.jpg  used on input line 243.
 (pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
- [3 <./tables-figures/model_confusion.jpg>] [4] [5]
-<./tables-figures/school-confusion-viz.JPG, id=87, 789.70032pt x 115.18031pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3 <./tables-figures/model_confusion.jpg>] [4] [5]
+<./tables-figures/school-confusion-viz.JPG, id=83, 789.70032pt x 115.18031pt>
 File: ./tables-figures/school-confusion-viz.JPG Graphic file (type jpg)
 <use ./tables-figures/school-confusion-viz.JPG>
-Package pdftex.def Info: ./tables-figures/school-confusion-viz.JPG  used on input line 382.
+Package pdftex.def Info: ./tables-figures/school-confusion-viz.JPG  used on input line 384.
 (pdftex.def)             Requested size: 438.17224pt x 63.90823pt.
 
-Overfull \hbox (219.08612pt too wide) in paragraph at lines 382--383
+Overfull \hbox (219.08612pt too wide) in paragraph at lines 384--385
 [][] 
  []
 
-<./tables-figures/white-trash-example.JPG, id=88, 726.46407pt x 89.58469pt>
+<./tables-figures/white-trash-example.JPG, id=84, 726.46407pt x 89.58469pt>
 File: ./tables-figures/white-trash-example.JPG Graphic file (type jpg)
 <use ./tables-figures/white-trash-example.JPG>
-Package pdftex.def Info: ./tables-figures/white-trash-example.JPG  used on input line 388.
+Package pdftex.def Info: ./tables-figures/white-trash-example.JPG  used on input line 390.
 (pdftex.def)             Requested size: 438.17224pt x 54.03418pt.
-<./tables-figures/racism-example.JPG, id=89, 781.41937pt x 95.6072pt>
+<./tables-figures/racism-example.JPG, id=85, 781.41937pt x 95.6072pt>
 File: ./tables-figures/racism-example.JPG Graphic file (type jpg)
 <use ./tables-figures/racism-example.JPG>
-Package pdftex.def Info: ./tables-figures/racism-example.JPG  used on input line 389.
+Package pdftex.def Info: ./tables-figures/racism-example.JPG  used on input line 391.
 (pdftex.def)             Requested size: 438.17224pt x 53.61113pt.
 
-Overfull \hbox (219.08612pt too wide) in paragraph at lines 388--390
+Overfull \hbox (219.08612pt too wide) in paragraph at lines 390--392
 [][]
  []
 
 
-Overfull \hbox (219.08612pt too wide) in paragraph at lines 388--390
+Overfull \hbox (219.08612pt too wide) in paragraph at lines 390--392
 [] 
  []
 
@@ -411,6 +409,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 14.
+
+Underfull \hbox (badness 2073) in paragraph at lines 18--23
+\OT1/ptm/m/n/10 (+20) sukhin.  At-ten-tion is all you need.  \OT1/ptm/m/it/10 (+20) CoRR\OT1/ptm/m/n/10 (+20) ,
+ []
+
 ) [6
 
 
@@ -420,18 +423,18 @@ Package rerunfilecheck Info: File `HateBaselinesReport.out' has not changed.
  )
 (\end occurred when \ifx on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 12920 strings out of 478353
- 209158 string characters out of 5852100
- 562045 words of memory out of 5000000
+ 12943 strings out of 478353
+ 209373 string characters out of 5852100
+ 562153 words of memory out of 5000000
  30643 multiletter control sequences out of 15000+600000
- 429153 words of font info for 185 fonts, out of 8000000 for 9000
+ 430221 words of font info for 203 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,10n,77p,1100b,417s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,10n,77p,1100b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on HateBaselinesReport.pdf (6 pages, 279987 bytes).
+Output written on HateBaselinesReport.pdf (6 pages, 280583 bytes).
 PDF statistics:
- 150 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
- 42 named destinations out of 1000 (max. 500000)
+ 148 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
+ 41 named destinations out of 1000 (max. 500000)
  34847 words of extra memory for PDF output out of 35830 (max. 10000000)
 
