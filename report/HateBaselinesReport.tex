@@ -60,27 +60,27 @@ As a convention we will use \textbf{bold font} to refer to codebase related enti
 \subsection{The Research Question}
 
 \section{Review of \cite{auto_hatespeech}}
-In this section the central question: "What did Davidson et al. actually do?" and what are the results against which we will benchmark.
+In this section the central question is: "What did Davidson et al. actually do?" and "What are the results against which we will benchmark?".
 
 \subsection{the Model}
-The jist of it is the following:
+The jist oft is the following:
 They use a dataset with about 25.000 tweets. 
 Then use Tidf-vectorizers on the tokens and on the POS-tags of the tweet to get a vectorized 
 version of the tweet on the syntactic and on the word-level.
 Then calculate a few more features based on reading-ease levels, counts of hashtags,mentions,urls and sentiment.
 All these get fed into a feature selecter via logistic regression with L1-regularization ( using the liblinear solver )
-for dimensionality reduction and then predictions are generated using logistic regression.
+for dimensionality reduction and then predictions are generated using a \textbf{LinearSVC} with L2-penalty and squared hinge loss.
 
 \subsection{the Results}
 \cite{auto_hatespeech} claims that their final model has an overall precision of 0.91, an overall recall of 0.9 and a f1-score of 0.9.
 They also claim a precision of 0.44 and recall of 0.61 (which implies a F1-score of about 0.525) on the hate class.
 These claims come with an asteriks, because these numbers do not represent the performance on a test set but rather using the entire
 data to train and evaluating effectively on the trainingset. 
-It is impossible to really judge how much overfitting inflates the numbers here.
-What we were able to replicate is a model which achieves overall precision 0.84, recall of 0.75 and F1-score of 0.78 on a testtest of 10\% of the total data
-using weighted averages, which is significantly worse, than the reported values.
-And a precision of 0.21, recall of 0.6 and an F1-score of 0.31 on the hateclass in the testset.
-These values are to be taken with caution since we don't cross validate here, so there is a chance this is sampling bias. 
+It is impossible to really judge how much overfitting inflates the numbers here, but to keep everything compareable we will use this methodology as well.
+What we were able to replicate is a model which achieves overall precision 0.87, recall of 0.85 and F1-score of 0.85 
+trained and evaluated on the entire dataset.
+And a precision of 0.48, recall of 0.47 and an F1-score of 0.44 on the hateclass.
+Which is close to the reported values but still quite a bit less than what was reported.
 
 \begin{table}
 \caption{classification report for our reporduction of Davidsons model with features}
@@ -88,46 +88,47 @@ These values are to be taken with caution since we don't cross validate here, so
 \begin{tabular}{c| c c c c}
 class & precision & recall & f1-score & support \\
 \hline
-hateful & 0.21 & 0.6 & 0.31 & 134.0 \\
-offensive & 0.94 & 0.74 & 0.83 & 1900.0 \\
-neither & 0.61 & 0.81 & 0.69 & 446.0 \\
+hateful & 0.5 & 0.4 & 0.44 & 1430.0 \\
+offensive & 0.95 & 0.87 & 0.91 & 19190.0 \\
+neither & 0.63 & 0.91 & 0.75 & 4163.0 \\
 \end{tabular}}
 
 \resizebox{\linewidth}{!}{
 \begin{tabular}{c| c c c c}
 metric & precision & recall & f1-score & support \\
 \hline
-accuracy & nan & nan & 0.75 & 2480.0 \\
-macro & 0.59 & 0.72 & 0.61 & 2480.0 \\
-weighted & 0.84 & 0.75 & 0.78 & 2480.0 \\
+accuracy & nan & nan & 0.85 & 24783.0 \\
+macro & 0.69 & 0.73 & 0.7 & 24783.0 \\
+weighted & 0.87 & 0.85 & 0.85 & 24783.0 \\
 \end{tabular}}
+
 \label{tab:davidson_withfeat}
 \end{table}
 
 Since we aim to compare the embeddings only we reran the sourcecode of Davidson with just the vectorizers on the tweet and the pos-tags.
-This yielded a model with overall precision of 0.85, recall of 0.74, F1-score of 0.78
-and a precision of 0.20, a recall of 0.61 and a F1-score of 0.3 on the hateclass again evaluated on 10\% of the data as a test set.
-Which again seems odd since sentiment features should yield a bunch of interesting information for the feature selection.
+This yielded a model with overall precision of 0.87, recall of 0.85, F1-score of 0.86
+and a precision of 0.4, a recall of 0.53 and a F1-score of 0.46 on the hateclass.
 
 \begin{table}
 \caption{classification report for our reporduction of Davidsons model without features} 
 \resizebox{\linewidth}{!}{
-\begin{tabular}[h]{c| c c c c}
+\begin{tabular}{c| c c c c}
 class & precision & recall & f1-score & support \\
 \hline
-hateful & 0.2 & 0.61 & 0.3 & 134.0 \\
-offensive & 0.95 & 0.73 & 0.83 & 1900.0 \\
-neither & 0.62 & 0.83 & 0.71 & 446.0 \\
+hateful & 0.4 & 0.53 & 0.46 & 1430.0 \\
+offensive & 0.94 & 0.88 & 0.91 & 19190.0 \\
+neither & 0.69 & 0.84 & 0.76 & 4163.0 \\
 \end{tabular}}
 
-\resizebox{\linewidth}{!}{
-\begin{tabular}{c| c c c c}
+\resizebox{\linewidth}{!}{\begin{tabular}{c| c c c c}
 metric & precision & recall & f1-score & support \\
 \hline
-accuracy & nan & nan & 0.74 & 2480.0 \\
-macro & 0.59 & 0.72 & 0.61 & 2480.0 \\
-weighted & 0.85 & 0.74 & 0.78 & 2480.0 \\
+accuracy & nan & nan & 0.85 & 24783.0 \\
+macroavg & 0.68 & 0.75 & 0.71 & 24783.0 \\
+weightedavg & 0.87 & 0.85 & 0.86 & 24783.0 \\
 \end{tabular}}
+
+
 \label{tab:davidson_nofeat}
 \end{table}
 
@@ -172,7 +173,7 @@ Which is why the Pytorch model is provided completely in the repository to make 
 \subsection{Finetuning}
 We used a custom lossfunction to mediate classimbalances.
 For this we subclassed the \textbf{Trainer} class and overwrote the \textbf{compute\_loss} function with a custom function.
-We use CategoricalCrossEntropy with weights for each class given by:
+We use \textbf{CategoricalCrossEntropy} with weights for each class given by:
 $$ w_i = 1 - \frac{count(class_i)}{count(data)}$$
 For training we used the following Hyperparameters:
 First we finetuned with: 
@@ -203,36 +204,36 @@ the rest of the unspecified hyperparameters were the default value or are paths/
 relevant and can be looked up in the \textbf{train\_model} notebook.
 
 \subsection{Results}
-This yielded the following results using sklearns \textbf{classification\_report}, on a test set of 10\%
-of the total data.
-
+This yielded the following results using sklearns \textbf{classification\_report}.
 \begin{table}
 \caption{Classification report for our finetuned model without external features}
 \resizebox{\linewidth}{!}{
 \begin{tabular}{c| c c c c}
 class & precision & recall & f1-score & support \\
 \hline
-hateful & 0.58 & 0.75 & 0.66 & 134.0 \\
-offensive & 0.97 & 0.96 & 0.96 & 1899.0 \\
-neither & 0.96 & 0.95 & 0.96 & 446.0 \\
+hateful & 0.56 & 0.71 & 0.63 & 1430.0 \\
+offensive & 0.97 & 0.95 & 0.96 & 19190.0 \\
+neither & 0.94 & 0.97 & 0.95 & 4163.0 \\
 \end{tabular}}
 
 \resizebox{\linewidth}{!}{
 \begin{tabular}{c| c c c c}
 metric & precision & recall & f1-score & support \\
 \hline
-accuracy & nan & nan & 0.94 & 2479.0 \\
-macro & 0.84 & 0.89 & 0.86 & 2479.0 \\
-weighted & 0.95 & 0.94 & 0.95 & 2479.0 \\
+accuracy & nan & nan & 0.94 & 24783.0 \\
+macroavg & 0.83 & 0.88 & 0.85 & 24783.0 \\
+weightedavg & 0.94 & 0.94 & 0.94 & 24783.0 \\
 \end{tabular}}
+
 \label{tab:model}
 \end{table}
 
 \ref{tab:model} shows that one can expect a relatively basic transformer model to outperform the baseline proposed by \cite{auto_hatespeech}.
 The most significant improvement on the hateclass, that is pretty stable, under multiple training runs (different seeds and random classifier head weights)
 is the precision. It is not uncommon to see with finetuning for a few epochs a precision of 0.5 and a recall of 0.5 on the hateclass of the testset.
-This still is a 0.06 improvement in precision over Davidsons reported numbers (which are evaluated on the trainingset).
-Here one sees a form of Precision/Recall Trade-off.
+This still is a 0.06 improvement in precision over Davidsons reported numbers.
+Here one starts to see a form of Precision/Recall Trade-off emerge when training where one needs some trial and error to get a model for which 
+$$ Recall + Precision > 1 $$
 
 \begin{figure}[h]
  \includegraphics[width=\linewidth]{./tables-figures/model_confusion.jpg}
@@ -353,20 +354,23 @@ This evidence is seen in some of the maximum loss examples, which are just plain
 This is not yet complete evidence, but already provides some confidence that the model actually learned some reasonable structure from the ground up.
 The model definitely learned about rasist remarks a few of the highest confidence examples in the hate-class revolve around homophobic or racist language.
 As one can see in the saliencey scores using the \textbf{multiclass\_explainer} in the \textbf{evaluate\_model} notebook.
- example outputs with high confidence are shown in \ref{fig:racism-example},
-  as one can see in these examples the model derives almost all confidence out of racist-slurrs.
-
-
-
-
-
-
+example outputs with high confidence are shown in \ref{fig:racism-example},
+as one can see in these examples the model derives almost all confidence out of racist-slurrs.
 
 
 
 \subsection{Cost of Implementation and viability for industry purposes}
 
 \section{Conclusion - A Reasonable Baseline for Hatespeech}
+So we are now able to confidently answer our research question.
+Yes we should put forward a different Baseline performance for Transformer models on this dataset.
+We propose a good conservative baseline be a recall of 0.65 and precision of 0.55 on the hate-class
+with just embeddings, without external features and at least an F1-Score of 0.93 overall.
+This is a reasonable perfomance to expect of a Transformer model with a Sequential-head with finetuning
+and hyperparameter tuning.
+We didn't implement a real Hyperparameter optimization and on a faster GPU, it is possible to get a much deeper search into
+the parameter space. Thus this seems like an appropriate baseline, especially wih the results of davidson, being only partially reproducable.
+
 
 
 

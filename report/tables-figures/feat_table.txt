@@ -1,19 +1,17 @@
-\begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{c| c c c c}
 class & precision & recall & f1-score & support \\
 \hline
-hateful & 0.44 & 0.49 & 0.46 & 1430.0 \\
-offensive & 0.93 & 0.9 & 0.92 & 19190.0 \\
-neither & 0.73 & 0.82 & 0.77 & 4163.0 \\
-\end{tabular}
-\end{center}
+hateful & 0.5 & 0.4 & 0.44 & 1430.0 \\
+offensive & 0.95 & 0.87 & 0.91 & 19190.0 \\
+neither & 0.63 & 0.91 & 0.75 & 4163.0 \\
+\end{tabular}}
 
-\begin{center}
+\resizebox{\linewidth}{!}{
 \begin{tabular}{c| c c c c}
 metric & precision & recall & f1-score & support \\
 \hline
-accuracy & nan & nan & 0.86 & 24783.0 \\
-macroavg & 0.7 & 0.74 & 0.72 & 24783.0 \\
-weightedavg & 0.87 & 0.86 & 0.87 & 24783.0 \\
-\end{tabular}
-\end{center}
+accuracy & nan & nan & 0.85 & 24783.0 \\
+macro & 0.69 & 0.73 & 0.7 & 24783.0 \\
+weighted & 0.87 & 0.85 & 0.85 & 24783.0 \\
+\end{tabular}}
