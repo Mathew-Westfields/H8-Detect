@@ -139,13 +139,13 @@ weighted & 0.87 & 0.85 & 0.86 & 24783.0 \\
 
 The confusion matricies can be seen in Figure \ref{fig:feature_confusion} and  Figure \ref{fig:nofeature_confusion}.
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \includegraphics[width=\linewidth]{./tables-figures/feat_confusion.jpg}
   \caption{Confusion of our version of Davidson's model with features}
   \label{fig:feature_confusion}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[ht]
   \includegraphics[width=\linewidth]{./tables-figures/nofeat_confusion.jpg}
   \caption{Confusion of our version of Davidson's model with no features}
   \label{fig:nofeature_confusion}
@@ -241,7 +241,7 @@ is the precision. It is not uncommon to see with finetuning for a few epochs a p
 This still is a 0.06 improvement in precision over Davidson's reported numbers.
 Here one starts to see a form of precision/recall trade-off emerge when training. Where one needs some trial and error to get a model for which 
 $ recall + precision > 1 $ holds since one seems to trade recall for precision in the hate-class very evenly.
-\begin{figure}[h]
+\begin{figure}[ht]
  \includegraphics[width=\linewidth]{./tables-figures/model_confusion.jpg}
   \caption{Confusion of the finetuned model}
   \label{fig:model_confusion}
@@ -250,7 +250,7 @@ $ recall + precision > 1 $ holds since one seems to trade recall for precision i
 \section{Evaluation}
 \subsection{Comparison to \cite{auto_hatespeech}}
 Comparing Table \ref{tab:model} to the reported numbers in Davidson's paper we can clearly see the overall performance increase.
-\begin{table}[h]
+\begin{table}[ht]
   \begin{tabular}{c | c  c}
     metric & our model & Davidson \\
     \hline
@@ -263,7 +263,7 @@ Comparing Table \ref{tab:model} to the reported numbers in Davidson's paper we c
 Particularly interesting is the improvement on the hate-class of the transformer model with tuned hyperparameters.
 The finetuned transformer model outperforms the baseline by Davidson reliably.
 
-\begin{table}[h]
+\begin{table}[ht]
   \begin{tabular}{c | c  c}
     metric & our model & Davidson \\
     \hline
