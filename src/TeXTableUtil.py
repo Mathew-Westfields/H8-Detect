@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 
 def report_to_df(report:str):
+    # Takes Classification report from sklearn and parses it into a dataframe
     arr = report.split()
     class2name = {0:"hateful",1:"offensive",2:"neither"}
     cls_cols = ["class"] + arr[0:4] # split of column names and add column name class
@@ -12,7 +13,9 @@ def report_to_df(report:str):
     cls_rows = arr[4:4+num_of_classes*(num_of_col)]
     avg_rows = arr[4+num_of_classes*(num_of_col):]
 
-    def handle_classifer_row(cls_rows): # this changes with the number of classes
+    def handle_classifer_row(cls_rows): 
+        #this takes the precision, recall, f1 part of the table and makes it into pd.DataFrame readable data
+        # this changes with the number of classes
         cls_rows = [float(el)  for el in cls_rows]
         cls_rows = [cls_rows[num_of_col*i:num_of_col*(i+1)] for i in range(num_of_classes)] #basicly index stuff
         cls_data = []
@@ -23,7 +26,9 @@ def report_to_df(report:str):
             cls_data.append(cls_rows[i])
         return cls_data
 
-    def handle_average_rows(avg_rows): # this can be completely hardcoded since this never changes with size!
+    def handle_average_rows(avg_rows): 
+        # this does the same thing but with the average rows 
+        # this can be completely hardcoded since this never changes with size!
         acc_row = avg_rows[0:3]
         acc_name = acc_row[0] # this row is different than the other two since it contains more whitespace
         acc_row = acc_row[1:]
@@ -52,17 +57,19 @@ def report_to_df(report:str):
     return cls_df,avg_df
 
 def report_to_LaTeX(report,table_name:str,mode=None):
+    #this takes the report from sklearn and formats it as a LaTeX table
     cls_df,avg_df = report_to_df(report)
-    begin_str = "\\resizebox{\\linewidth}{!}{\n\\begin{tabular}{c| c c c c}\n"
+    begin_str = "\\resizebox{\\linewidth}{!}{\n\\begin{tabular}{c| c c c c}\n" # needed to add evs and resize according to linewidth in LaTeX
     end_str = "\\end{tabular}}\n"
 
     def build_TeX(df,index_str):
+        #builds the inner of the tabluar env by concatenating smart and saves as txt in predetermined file
         cols  = list(df.columns)
         out_str= index_str
 
         for el in cols:
-            out_str = out_str + " & " + str(el)
-        out_str = out_str + " \\\\" + "\n" + "\\hline" + "\n"
+            out_str = out_str + " & " + str(el) # a & b & c is a row in a table with 3 columns in LaTeX
+        out_str = out_str + " \\\\" + "\n" + "\\hline" + "\n" # add the hline so it looks nice between column names and values
 
         for row in df.iterrows():
             class_name = row[0]
@@ -76,7 +83,7 @@ def report_to_LaTeX(report,table_name:str,mode=None):
      
     cls_TeX = build_TeX(cls_df,"class")
     avg_TeX = build_TeX(avg_df,"metric")
-    if mode == "save":
+    if mode == "save": #save it as a txt
         with open("../report/tables-figures/"+table_name+".txt","w") as output_file:
             output_file.write(cls_TeX + "\n" + avg_TeX)
     else:
