@@ -6,5 +6,5 @@ a report done in the WiSe21/22 as part of a seminar on hatespeech detection.
 ## How to use:
 If one wants to see the performance of the model, the evaluate_model notebook is the place to start.
 Everything one needs is already precalculated in the repository, so the evaluate_model is ready to run out of the box.
-If one tries to recreate the training, you need to set path = None in the model_init function, otherwise it will load the
-pretrained model in results/model.
+If one tries to recreate the training, you need to set path = None in the model_init function in Trainerclass in the train_model notebook.
+This way it will load a default distilbert-uncased model otherwise it will load the pretrained model in results/model.
