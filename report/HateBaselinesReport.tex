@@ -155,7 +155,7 @@ The confusion matricies can be seen in Figure \ref{fig:feature_confusion} and  F
 \section{The Transformer Model and Implementation}
 
 \subsection{The preprocessing}
-For preprocessing of the Tweets we used the \textbf{spaCy} \textbf{en\_core\_web\_sm} pipeline with an \textbf{EntityRuler} component added.
+For preprocessing of the Tweets we used the \textbf{spaCy} \cite{spacy2} \textbf{en\_core\_web\_sm} pipeline with an \textbf{EntityRuler} component added.
 This uses identical RegEx to the preprocessing in \cite{auto_hatespeech} to identify urls, mentions and excess whitespace.
 Then the entire tweet is lemmatized via the \textbf{Lemmatizer} component in the \textbf{en\_core\_web\_sm} pipeline and urls 
 are replaced with a "[URL]" token, as well as mentions being replaced by a "[MENTION]" token.
@@ -166,7 +166,7 @@ For example: turning "Shuuuuuuuuut upppp" or "\$hut up" into "shut up".
 
 \subsection{The Model}
 For the model we used a \textbf{distil-bert-uncased} pretrained Distilbert model with a classification head for finetuning
-using the \textbf{Huggingface} \textbf{AutoModelForSequenceClassification} class. In addition we used the appropriate BERT-WordPiece 
+using the \textbf{Huggingface} \cite{Huggingface} \textbf{AutoModelForSequenceClassification} class. In addition we used the appropriate BERT-WordPiece 
 tokenizer adding two custom tokens ([URL],[MENTION]) to the tokenizer.
 The model gets called by the \textbf{Trainer} class via a \textbf{model\_init} method, since otherwise the classification head
 weights are not connected to the \textbf{seed} parameter of the \textbf{Trainer} class.
@@ -357,7 +357,7 @@ This evidence is seen in some of the maximum loss examples, which are just plain
 
 This is not yet complete evidence, but already provides some confidence that the model actually learned some reasonable structure from the ground up.
 The model definitely learned about racist remarks a few of the highest confidence examples in the hate-class revolve around homophobic or racist language.
-As one can see in the saliencey scores using the \textbf{multiclass\_explainer} in the \textbf{evaluate\_model} notebook.
+As one can see in the saliencey scores using the \textbf{multiclass\_explainer} based on \cite{saliency_paper} in the \textbf{evaluate\_model} notebook.
 example outputs with high confidence are shown in Figure \ref{fig:racism-example},
 as one can see in these examples the model derives almost all confidence out of racist-slurs.
 

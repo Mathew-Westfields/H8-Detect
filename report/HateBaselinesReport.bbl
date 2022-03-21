@@ -1,9 +1,16 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{6}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Bastings and Filippova(2020)]{saliency_paper}
+J.~Bastings and K.~Filippova.
+\newblock The elephant in the interpretability room: Why use attention as
+  explanation when we have saliency methods?
+\newblock \emph{CoRR}, abs/2010.05607, 2020.
+\newblock URL \url{https://arxiv.org/abs/2010.05607}.
 
 \bibitem[Davidson et~al.(2017)Davidson, Warmsley, Macy, and
   Weber]{auto_hatespeech}
@@ -20,6 +27,12 @@ J.~Devlin, M.~Chang, K.~Lee, and K.~Toutanova.
 \newblock \emph{CoRR}, abs/1810.04805, 2018.
 \newblock URL \url{http://arxiv.org/abs/1810.04805}.
 
+\bibitem[Honnibal and Montani(2017)]{spacy2}
+M.~Honnibal and I.~Montani.
+\newblock {spaCy 2}: Natural language understanding with {B}loom embeddings,
+  convolutional neural networks and incremental parsing.
+\newblock To appear, 2017.
+
 \bibitem[Vaswani et~al.(2017)Vaswani, Shazeer, Parmar, Uszkoreit, Jones, Gomez,
   Kaiser, and Polosukhin]{Attention_is_all_you_need}
 A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
@@ -27,5 +40,14 @@ A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez,
 \newblock Attention is all you need.
 \newblock \emph{CoRR}, abs/1706.03762, 2017.
 \newblock URL \url{http://arxiv.org/abs/1706.03762}.
+
+\bibitem[Wolf et~al.(2019)Wolf, Debut, Sanh, Chaumond, Delangue, Moi, Cistac,
+  Rault, Louf, Funtowicz, and Brew]{Huggingface}
+T.~Wolf, L.~Debut, V.~Sanh, J.~Chaumond, C.~Delangue, A.~Moi, P.~Cistac,
+  T.~Rault, R.~Louf, M.~Funtowicz, and J.~Brew.
+\newblock Huggingface's transformers: State-of-the-art natural language
+  processing.
+\newblock \emph{CoRR}, abs/1910.03771, 2019.
+\newblock URL \url{http://arxiv.org/abs/1910.03771}.
 
 \end{thebibliography}
