@@ -12,6 +12,6 @@ neither & 0.69 & 0.84 & 0.76 & 4163.0 \\
 metric & precision & recall & f1-score & support \\
 \hline
 accuracy & nan & nan & 0.85 & 24783.0 \\
-macroavg & 0.68 & 0.75 & 0.71 & 24783.0 \\
-weightedavg & 0.87 & 0.85 & 0.86 & 24783.0 \\
+macro & 0.68 & 0.75 & 0.71 & 24783.0 \\
+weighted & 0.87 & 0.85 & 0.86 & 24783.0 \\
 \end{tabular}}

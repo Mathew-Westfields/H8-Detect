@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.28)  20 MAR 2022 22:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.11.28)  21 MAR 2022 01:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -338,12 +338,12 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ]
-<./tables-figures/feat_confusion.jpg, id=26, 361.35pt x 361.35pt>
+<./tables-figures/feat_confusion.jpg, id=29, 361.35pt x 361.35pt>
 File: ./tables-figures/feat_confusion.jpg Graphic file (type jpg)
 <use ./tables-figures/feat_confusion.jpg>
 Package pdftex.def Info: ./tables-figures/feat_confusion.jpg  used on input line 141.
 (pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
-<./tables-figures/nofeat_confusion.jpg, id=27, 361.35pt x 361.35pt>
+<./tables-figures/nofeat_confusion.jpg, id=30, 361.35pt x 361.35pt>
 File: ./tables-figures/nofeat_confusion.jpg Graphic file (type jpg)
 <use ./tables-figures/nofeat_confusion.jpg>
 Package pdftex.def Info: ./tables-figures/nofeat_confusion.jpg  used on input line 147.
@@ -355,44 +355,46 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 163.
 (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [2 <./tables-figures/feat_confusion.jpg> <./tables-figures/nofeat_confusion.jpg>]
-<./tables-figures/model_confusion.jpg, id=42, 361.35pt x 361.35pt>
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2 <./tables-figures/feat_confusion.jpg> <./tables-figures/nofeat_confusion.jpg>]
+<./tables-figures/model_confusion.jpg, id=45, 361.35pt x 361.35pt>
 File: ./tables-figures/model_confusion.jpg Graphic file (type jpg)
 <use ./tables-figures/model_confusion.jpg>
-Package pdftex.def Info: ./tables-figures/model_confusion.jpg  used on input line 243.
+Package pdftex.def Info: ./tables-figures/model_confusion.jpg  used on input line 242.
 (pdftex.def)             Requested size: 219.08612pt x 219.08885pt.
 
+Underfull \vbox (badness 5288) has occurred while \output is active []
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[3 <./tables-figures/model_confusion.jpg>] [4] [5]
-<./tables-figures/school-confusion-viz.JPG, id=83, 789.70032pt x 115.18031pt>
+ [3 <./tables-figures/model_confusion.jpg>] [4] [5]
+<./tables-figures/school-confusion-viz.JPG, id=90, 789.70032pt x 115.18031pt>
 File: ./tables-figures/school-confusion-viz.JPG Graphic file (type jpg)
 <use ./tables-figures/school-confusion-viz.JPG>
-Package pdftex.def Info: ./tables-figures/school-confusion-viz.JPG  used on input line 384.
+Package pdftex.def Info: ./tables-figures/school-confusion-viz.JPG  used on input line 400.
 (pdftex.def)             Requested size: 438.17224pt x 63.90823pt.
 
-Overfull \hbox (219.08612pt too wide) in paragraph at lines 384--385
+Overfull \hbox (219.08612pt too wide) in paragraph at lines 400--401
 [][] 
  []
 
-<./tables-figures/white-trash-example.JPG, id=84, 726.46407pt x 89.58469pt>
+<./tables-figures/white-trash-example.JPG, id=91, 726.46407pt x 89.58469pt>
 File: ./tables-figures/white-trash-example.JPG Graphic file (type jpg)
 <use ./tables-figures/white-trash-example.JPG>
-Package pdftex.def Info: ./tables-figures/white-trash-example.JPG  used on input line 390.
+Package pdftex.def Info: ./tables-figures/white-trash-example.JPG  used on input line 406.
 (pdftex.def)             Requested size: 438.17224pt x 54.03418pt.
-<./tables-figures/racism-example.JPG, id=85, 781.41937pt x 95.6072pt>
+<./tables-figures/racism-example.JPG, id=92, 781.41937pt x 95.6072pt>
 File: ./tables-figures/racism-example.JPG Graphic file (type jpg)
 <use ./tables-figures/racism-example.JPG>
-Package pdftex.def Info: ./tables-figures/racism-example.JPG  used on input line 391.
+Package pdftex.def Info: ./tables-figures/racism-example.JPG  used on input line 407.
 (pdftex.def)             Requested size: 438.17224pt x 53.61113pt.
 
-Overfull \hbox (219.08612pt too wide) in paragraph at lines 390--392
+Overfull \hbox (219.08612pt too wide) in paragraph at lines 406--408
 [][]
  []
 
 
-Overfull \hbox (219.08612pt too wide) in paragraph at lines 390--392
+Overfull \hbox (219.08612pt too wide) in paragraph at lines 406--408
 [] 
  []
 
@@ -410,7 +412,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 14.
 
-Underfull \hbox (badness 2073) in paragraph at lines 18--23
+Underfull \hbox (badness 1571) in paragraph at lines 17--22
+\OT1/ptm/m/n/10 (+20) BERT: pre-training of deep bidi-rec-tional trans-
+ []
+
+
+Underfull \hbox (badness 3547) in paragraph at lines 17--22
+\OT1/ptm/m/n/10 (+20) form-ers for lan-guage un-der-stand-ing.  \OT1/ptm/m/it/10 (+20) CoRR\OT1/ptm/m/n/10 (+20) ,
+ []
+
+
+Underfull \hbox (badness 2073) in paragraph at lines 25--30
 \OT1/ptm/m/n/10 (+20) sukhin.  At-ten-tion is all you need.  \OT1/ptm/m/it/10 (+20) CoRR\OT1/ptm/m/n/10 (+20) ,
  []
 
@@ -423,18 +435,18 @@ Package rerunfilecheck Info: File `HateBaselinesReport.out' has not changed.
  )
 (\end occurred when \ifx on line 5 was incomplete) 
 Here is how much of TeX's memory you used:
- 12943 strings out of 478353
- 209373 string characters out of 5852100
- 562153 words of memory out of 5000000
- 30643 multiletter control sequences out of 15000+600000
- 430221 words of font info for 203 fonts, out of 8000000 for 9000
+ 12952 strings out of 478353
+ 209465 string characters out of 5852100
+ 560220 words of memory out of 5000000
+ 30646 multiletter control sequences out of 15000+600000
+ 430403 words of font info for 206 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,10n,77p,1100b,412s stack positions out of 5000i,500n,10000p,200000b,80000s
-{c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on HateBaselinesReport.pdf (6 pages, 280583 bytes).
+{c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on HateBaselinesReport.pdf (6 pages, 309735 bytes).
 PDF statistics:
- 148 PDF objects out of 1000 (max. 8388607)
- 114 compressed objects within 2 object streams
- 41 named destinations out of 1000 (max. 500000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
  34847 words of extra memory for PDF output out of 35830 (max. 10000000)
 

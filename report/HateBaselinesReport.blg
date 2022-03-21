@@ -3,44 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: HateBaselinesReport.aux
 The style file: abbrvnat.bst
 Database file #1: lit.bib
-You've used 2 entries,
+You've used 3 entries,
             2773 wiz_defined-function locations,
-            605 strings with 5037 characters,
-and the built_in function-call counts, 1195 in all, are:
-= -- 94
-> -- 114
+            612 strings with 5247 characters,
+and the built_in function-call counts, 1676 in all, are:
+= -- 135
+> -- 153
 < -- 0
-+ -- 38
-- -- 36
-* -- 112
-:= -- 206
-add.period$ -- 8
-call.type$ -- 2
-change.case$ -- 18
-chr.to.int$ -- 2
-cite$ -- 4
-duplicate$ -- 40
-empty$ -- 63
-format.name$ -- 38
-if$ -- 231
++ -- 51
+- -- 48
+* -- 155
+:= -- 286
+add.period$ -- 12
+call.type$ -- 3
+change.case$ -- 25
+chr.to.int$ -- 3
+cite$ -- 6
+duplicate$ -- 60
+empty$ -- 94
+format.name$ -- 51
+if$ -- 328
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 2
-newline$ -- 20
-num.names$ -- 8
-pop$ -- 30
+missing$ -- 3
+newline$ -- 26
+num.names$ -- 12
+pop$ -- 41
 preamble$ -- 1
-purify$ -- 16
+purify$ -- 22
 quote$ -- 0
-skip$ -- 39
+skip$ -- 56
 stack$ -- 0
-substring$ -- 4
-swap$ -- 2
+substring$ -- 6
+swap$ -- 3
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 22
+type$ -- 33
 warning$ -- 0
-while$ -- 6
+while$ -- 9
 width$ -- 0
-write$ -- 37
+write$ -- 52

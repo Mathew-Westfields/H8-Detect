@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex HateBaselinesReport"] 1647810101 "HateBaselinesReport.aux" "HateBaselinesReport.bbl" "HateBaselinesReport" 1647813564
-  "HateBaselinesReport.aux" 1647813563 2180 7994f372f998784a943b957235195bb7 "pdflatex"
+["bibtex HateBaselinesReport"] 1647818211 "HateBaselinesReport.aux" "HateBaselinesReport.bbl" "HateBaselinesReport" 1647821511
+  "HateBaselinesReport.aux" 1647821511 2278 e910f3e8a8b5fc0c5a5e924ffa630b99 "pdflatex"
   "c:/texlive/2021/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1638109433 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
   "lit.bib" 1647726301 4048 f48af2e9d6cad93f34fab23045ff21e3 ""
   (generated)
   "HateBaselinesReport.bbl"
   "HateBaselinesReport.blg"
-["pdflatex"] 1647813561 "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" "HateBaselinesReport.pdf" "HateBaselinesReport" 1647813564
-  "HateBaselinesReport.aux" 1647813563 2180 7994f372f998784a943b957235195bb7 "pdflatex"
-  "HateBaselinesReport.bbl" 1647810101 968 efebcfa5630ed02de78df15d837bced2 "bibtex HateBaselinesReport"
-  "HateBaselinesReport.out" 1647813562 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "HateBaselinesReport.tex" 1647813560 20222 36cbf7b77704aa47b0d33d0a28225e2e ""
+["pdflatex"] 1647821509 "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" "HateBaselinesReport.pdf" "HateBaselinesReport" 1647821511
+  "HateBaselinesReport.aux" 1647821511 2278 e910f3e8a8b5fc0c5a5e924ffa630b99 "pdflatex"
+  "HateBaselinesReport.bbl" 1647818212 1279 57ae9e7c6dfc755184d92f84bc259876 "bibtex HateBaselinesReport"
+  "HateBaselinesReport.out" 1647821510 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "HateBaselinesReport.tex" 1647821508 21796 28e3ca8fdefb422f791e93b98b3af552 ""
   "acl2021.sty" 1647266102 22068 aa9be2b461d78fecf8536e61fd97d914 ""
-  "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" 1647813560 20222 36cbf7b77704aa47b0d33d0a28225e2e ""
+  "c:/Users/MEGAPORT/Documents/Uni/WiSe2021_22/ProjektSeminar/Project/H8-Detect/report/HateBaselinesReport.tex" 1647821508 21796 28e3ca8fdefb422f791e93b98b3af552 ""
   "c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc" 1638107084 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2021/texmf-dist/fonts/map/fontname/texfonts.map" 1638107634 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2021/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1638106708 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -48,7 +48,10 @@
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1638105555 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1638105555 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1638105555 35752 024fb6c41858982481f6968b5fc26508 ""
+  "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1638105555 32734 69e00a6b65cedb993666e42eedb3d48f ""
+  "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1638105555 32726 39f0f9e62e84beb801509898a605dbd5 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1638105555 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "c:/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1638105555 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb" 1638106708 45758 19968a0990191524e34e1994d4a31cb6 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb" 1638108074 35941 adef23a721dd8354a4a2bf4434f1c484 ""
   "c:/texlive/2021/texmf-dist/fonts/type1/urw/times/utmb8a.pfb" 1638111258 44729 fea0975e20ec51c992338362f05f1146 ""

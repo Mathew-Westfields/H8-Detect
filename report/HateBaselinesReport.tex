@@ -43,13 +43,13 @@
 \begin{document}
 \maketitle
 \begin{abstract}
-  Since the foundational paper \cite{Attention_is_all_you_need}, attentive systems, especially transformer models have 
-  taken the world of natural language processing by storm, especially the ability to inject context into embeddings and
-  finetune them based on a wide array of tasks, have yielded very strong and rigid results on natural language tasks.
-  Now the question is if baselines like in \cite{auto_hatespeech} are still valid or if the out-of-the-box performance of transformers
+  Since the foundational papers \cite{Attention_is_all_you_need} and \cite{BERT} attentive systems, especially transformer models have 
+  taken the world of natural language processing by storm, especially with the ability to inject context into embeddings and
+  finetune them based on a wide array of natural language tasks, have yielded very strong and rigid results.
+  Now the question is if baselines, like in \cite{auto_hatespeech}, are still valid or if the out-of-the-box performance of transformers
   validates a readjustment of baselines.
   We finetune a Distilbert model on the dataset of Davidson et. al, analyse the performance of the embeddings
-  and finally propose a new baseline on the dataset.
+  and propose a new baseline on the aforementioned dataset.
 \end{abstract}
  
 
@@ -65,25 +65,25 @@ to accommodate their stronger out of the box performance.
 As a convention we will use \textbf{bold font} to refer to codebase related entities, for example: 
 "...in the notebook \textbf{data\_pipeline} one finds the function \textbf{preprocess\_tweet} which handles preprocessing".
 
-Now to remind the reader of the central points of Davidson's paper we will review a few aspects of it here
+Now to remind the reader of the central points of Davidson's paper we will review a few aspects of it here.
 
-\subsection{The Model:}
+\subsection{The Model}
 They use Tidf-vectorizers on the tokens and on the POS-tags of the tweet to get a vectorized 
 version of the tweet on the syntactic and on the word-level.
 Then calculate a few more features based on reading-ease levels, counts of hashtags,mentions,urls and sentiment.
 All these get fed into a feature selecter via logistic regression with L1-regularization ( using the liblinear solver )
 for dimensionality reduction and then predictions are generated using a \textbf{LinearSVC} with L2-penalty and squared hinge loss.
 
-\subsection{The Results:}
+\subsection{The Results}
 Davidson et. al claim that their final model has an overall precision of 0.91, an overall recall of 0.9 and a f1-score of 0.9.
-They also claim a precision of 0.44 and recall of 0.61 (which implies a F1-score of about 0.525) on the hate class.
+They also claim a precision of 0.44 and recall of 0.61 (which implies a f1-score of about 0.525) on the hate class.
 These claims come with an asterisk, because these numbers do not represent the performance on a test set but rather using the entire
-data to train and evaluating effectively on the trainingset. 
+data to train and evaluating effectively on the training-set. 
 It is impossible to really judge how much overfitting inflates the numbers here, but to keep everything comparable we will use this methodology as well.
-What we were able to replicate is a model which achieves overall precision 0.87, recall of 0.85 and F1-score of 0.85 
+What we were able to replicate is a model which achieves overall precision 0.87, recall of 0.85 and f1-score of 0.85 
 trained and evaluated on the entire dataset.
-And a precision of 0.48, recall of 0.47 and an F1-score of 0.44 on the hate-class.
-Which is close to the reported values but still quite a bit less than what was reported.
+And a precision of 0.48, recall of 0.47 and an f1-score of 0.44 on the hate-class.
+Which is quite a bit less than what was reported, this could be due to version differences in sklearn messing up the hyperparameters.
 
 \begin{table}
 \caption{classification report for our reproduction of Davidson's model with features}
@@ -108,9 +108,9 @@ weighted & 0.87 & 0.85 & 0.85 & 24783.0 \\
 \label{tab:davidson_withfeat}
 \end{table}
 
-Since we aim to compare the embeddings only we reran the sourcecode of Davidson with just the vectorizers on the tweet and the pos-tags.
-This yielded a model with overall precision of 0.87, recall of 0.85, F1-score of 0.86
-and a precision of 0.4, a recall of 0.53 and a F1-score of 0.46 on the hateclass.
+Since we aim to compare the embeddings only we reran the source code of Davidson with just the vectorizers on the tweet and the pos-tags.
+This yielded a model with overall precision of 0.87, recall of 0.85, f1-score of 0.86
+and a precision of 0.4, a recall of 0.53 and a f1-score of 0.46 on the hate-class.
 
 \begin{table}
 \caption{classification report for our reproduction of Davidson's model without features} 
@@ -135,17 +135,17 @@ weighted & 0.87 & 0.85 & 0.86 & 24783.0 \\
 \label{tab:davidson_nofeat}
 \end{table}
 
-The confusion matricies can be seen in \ref{fig:feature_confusion} and \ref{fig:nofeature_confusion}.
+The confusion matricies can be seen in Figure \ref{fig:feature_confusion} and  Figure \ref{fig:nofeature_confusion}.
 
 \begin{figure}[h]
   \includegraphics[width=\linewidth]{./tables-figures/feat_confusion.jpg}
-  \caption{Confusion of our version of Davidsons model with features}
+  \caption{Confusion of our version of Davidson's model with features}
   \label{fig:feature_confusion}
 \end{figure}
 
 \begin{figure}[h]
   \includegraphics[width=\linewidth]{./tables-figures/nofeat_confusion.jpg}
-  \caption{Confusion of our version of Davidsons model with no features}
+  \caption{Confusion of our version of Davidson's model with no features}
   \label{fig:nofeature_confusion}
 \end{figure}
 
@@ -225,20 +225,19 @@ neither & 0.94 & 0.97 & 0.95 & 4163.0 \\
 metric & precision & recall & f1-score & support \\
 \hline
 accuracy & nan & nan & 0.94 & 24783.0 \\
-macroavg & 0.83 & 0.88 & 0.85 & 24783.0 \\
-weightedavg & 0.94 & 0.94 & 0.94 & 24783.0 \\
+macro & 0.83 & 0.88 & 0.85 & 24783.0 \\
+weighted & 0.94 & 0.94 & 0.94 & 24783.0 \\
 \end{tabular}}
 
 \label{tab:model}
 \end{table}
 
-\ref{tab:model} shows that one can expect a relatively basic transformer model to outperform the baseline proposed by \cite{auto_hatespeech}.
-The most significant improvement on the hateclass, that is pretty stable, under multiple training runs (different seeds and random classifier head weights)
-is the precision. It is not uncommon to see with finetuning for a few epochs a precision of 0.5 and a recall of 0.5 on the hateclass of the testset.
-This still is a 0.06 improvement in precision over Davidsons reported numbers.
+Table \ref{tab:model} shows that one can expect a relatively basic transformer model to outperform the baseline proposed by \cite{auto_hatespeech}.
+The most significant improvement on the hate-class, that is pretty stable, under multiple training runs (different seeds and random classifier head weights)
+is the precision. It is not uncommon to see with finetuning for a few epochs a precision of 0.5 and a recall of 0.5 on the hate-class of the testset.
+This still is a 0.06 improvement in precision over Davidson's reported numbers.
 Here one starts to see a form of Precision/Recall Trade-off emerge when training where one needs some trial and error to get a model for which 
-$$ Recall + Precision > 1 $$
-
+$ Recall + Precision > 1 $ holds since one seems to trade recall for precision in the hate-class very evenly.
 \begin{figure}[h]
  \includegraphics[width=\linewidth]{./tables-figures/model_confusion.jpg}
   \caption{Confusion of the finetuned model}
@@ -247,7 +246,7 @@ $$ Recall + Precision > 1 $$
 
 \section{Evaluation}
 \subsection{Comparison to \cite{auto_hatespeech}}
-Comparing \ref{tab:model} to the reported numbers in Davidsons paper we can clearly see the overall performance increase
+Comparing Table \ref{tab:model} to the reported numbers in Davidson's paper we can clearly see the overall performance increase.
 \begin{table}[h]
   \begin{tabular}{c | c  c}
     metric & our model & Davidson \\
@@ -258,8 +257,8 @@ Comparing \ref{tab:model} to the reported numbers in Davidsons paper we can clea
   \end{tabular}
 \end{table}
 
-Especially interesting is the improvement on the hate-class of the transformer model, especially with tuned Hyperparameters and
-finding good initial weights in the classification head the finetuned transformer model outperforms the Baseline by Davidson reliably.
+Especially interesting is the improvement on the hate-class of the transformer model, especially with tuned hyperparameters and
+finding good initial weights in the classification head the finetuned transformer model outperforms the baseline by Davidson reliably.
 
 \begin{table}[h]
   \begin{tabular}{c | c  c}
@@ -274,7 +273,7 @@ finding good initial weights in the classification head the finetuned transforme
 \subsection{Confusion and Maximum loss}
 We first begin to investigate some confusions of the model, for this purpose we use the \textbf{get\_top\_loss} function and investigate the examples which
 caused the biggest contributions to the loss.
-A typical error of the model is to overfit on the frequency of slurrs like "bitch","hoe" and similar.
+A typical error of the model is to overfit on the frequency of slurs like "bitch","hoe" and similar.
 These get classified almost universally as offensive independend of the context they were used.
 A few examples of a tweets which were classified as offensive but are actually part of the neither class would be
 
@@ -293,13 +292,13 @@ Especially interesting is this example which illustrates the overfitting quite w
 \end{center}
 
 in this tweet the subword "ho" is so close to "hoe" that the model immediately thinks the tweet is offensive.
-This can be seen in the attention patterns of the model as seen in \ref{fig:school-saliency}
+This can be seen in the attention patterns of the model as seen in Figure \ref{fig:school-saliency}
 
 The same overfitting on some special token frequency also leads to confusion between the hateful and offensive class.
 While confusion between the neither and hateful class occurs often in two types.
 The first type of error the model makes is not recognizing directed offensiveness versus undirected offensiveness.
 While the second type of error the model makes, is not seeing masked offensiveness.
-Where user use slurrs that don't have a high enough frequency to be recognized as such 
+Where user use slurs that don't have a high enough frequency to be recognized as such 
 or where everyday objects get used creatively to create offensive context.
 
 \paragraph{Examples of confusions in the hateful-class}
@@ -319,7 +318,7 @@ While these Tweets, which also belong to the hateful-class and were classified a
   \say{You are a jiggaboo...!} \newline
 \end{center}
 
-The first type of error also tends to mix with the overfitting on sexists-slurrs as seen in the following tweets which were classified as offensive
+The first type of error also tends to mix with the overfitting on sexists-slurs as seen in the following tweets which were classified as offensive
 but which belong to the hateful-class since they direct their offensiveness towards someone.
 \begin{center}
   \say{ @Fit4LifeMike @chanelisabeth hoe don't make me put up screenshots of your texts to me hoe }\newline
@@ -333,7 +332,7 @@ These types of errors make up a big portion of the 100 examples with the highest
 \subsection{What did the model learn?}
 The investigation of errors yields also some evidence of the model actually learning, instead of only fitting some
 frequency correlations. 
-This evidence is seen in some of the maximum loss examples, which are just plain misslabled, but get labled correctly by the model.
+This evidence is seen in some of the maximum loss examples, which are just plain mislabeled, but get labeled correctly by the model.
 
 \paragraph{Examples of tweets that belong in the neither-class:}
 \begin{center}
@@ -356,24 +355,41 @@ This evidence is seen in some of the maximum loss examples, which are just plain
 \end{center}
 
 This is not yet complete evidence, but already provides some confidence that the model actually learned some reasonable structure from the ground up.
-The model definitely learned about rasist remarks a few of the highest confidence examples in the hate-class revolve around homophobic or racist language.
+The model definitely learned about racist remarks a few of the highest confidence examples in the hate-class revolve around homophobic or racist language.
 As one can see in the saliencey scores using the \textbf{multiclass\_explainer} in the \textbf{evaluate\_model} notebook.
-example outputs with high confidence are shown in \ref{fig:racism-example},
-as one can see in these examples the model derives almost all confidence out of racist-slurrs.
+example outputs with high confidence are shown in Figure \ref{fig:racism-example},
+as one can see in these examples the model derives almost all confidence out of racist-slurs.
 
-\subsection{Cost of Implementation and viability for industry purposes}
 
-\section{Conclusion - A Reasonable Baseline for Hatespeech}
+\section{Conclusion}
+\paragraph{A Reasonable Baseline for Hatespeech:}
 So we are now able to confidently answer our research question.
-Yes we should put forward a different Baseline performance for Transformer models on this dataset.
-We propose a good baseline to be a recall of 0.65 and precision of 0.55 on the hate-class without external features
- and at least an F1-Score of 0.93 overall.
-This is a reasonable perfomance to expect of a Transformer model with a Sequential-head with finetuning
+Yes we should put forward a different baseline performance for Transformer models on this dataset.
+Based on our model and the possibilities for improving the performance we propose a reasonable baseline to be 
+a recall of 0.65 and precision of 0.55 on the hate-class and at least an f1-score of 0.93 overall.
+This is a reasonable performance to expect of a Transformer model with a Sequential-head with finetuning
 and hyperparameter tuning.
-We didn't implement a real hyperparameter optimization and on a faster GPU, it is possible to get a much deeper search into
-the parameter space. Thus this seems like an appropriate baseline, especially wih the results of davidson, being only partially reproducable.
+But a better optimized architecture, a better classification head that takes features, better hyperparameter tuning or other smart tricks
+should be able to beat those scores reliably.
+Which is why it should provide a good baseline,filtering ideas that just get beaten by spending more GPU hours on parameter tuning and finding good initial weights.
+We didn't implement a real hyperparameter optimization.
+On a faster GPU, it is possible to get a much deeper search into the parameter space and possibly push these results by a good bit.
 A good goal to strive towards would be a recall of 0.75 and a precision of 0.6, but it is unclear if the training process for such a model, would 
 be simple enough to really call it a baseline anymore.
+
+\paragraph{Relevance for Industry purposes:}
+This is obviously a rather important improvement for industrial purposes since moderators for social media are expensive and with 
+social media really only getting bigger at the moment it will become harder and harder to reinforce rules.
+An 0.14 increase in precision over the old baseline is a big deal, when one realizes that every day $500 \cdot 10^6$ Tweets are sent.
+Even with 1 in every 10000 Tweets being hateful, that would be 50000 Tweets per day that need to be correctly detected and removed.
+The improvement in precision means that 7000 tweets more get classified correctly and do not need human intervention.
+To put this in perspective even if a very skilled moderator would need 3 seconds per tweet, that is 
+$\frac{3 \cdot 7000}{60^2} \approx 5.83$ hours of work every day without a pause or slowing down from fatigue.
+At a salary of 20\$ per hour that is 42559\$ every year in labor (without calculating all the cost of human capital).
+That is a descent buffer in capital to pay for the computation hours needed to evaluate 500 million tweets.
+
+
+
 
 
 \clearpage 
